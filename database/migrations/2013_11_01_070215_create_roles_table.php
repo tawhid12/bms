@@ -30,21 +30,6 @@ return new class extends Migration
                 'identity' => 'admin',
                 'created_at' => Carbon::now()
             ],
-            [
-                'type' => 'Humar Resource Executive',
-                'identity' => 'hrexecutive',
-                'created_at' => Carbon::now()
-            ],
-            [
-                'type' => 'Accountant',
-                'identity' => 'accountant',
-                'created_at' => Carbon::now()
-            ],
-            [
-                'type' => 'General User',
-                'identity' => 'user',
-                'created_at' => Carbon::now()
-            ]
         ]);
         
     }
