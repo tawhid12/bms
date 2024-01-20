@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
-            $table->text('acc_type')->default(1);
             $table->string('photo')->nullable();
             $table->text('address1')->nullable();
             $table->text('address2')->nullable();
