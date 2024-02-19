@@ -118,14 +118,17 @@
     <section class="about-company">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row align-items-center">
-                        <div class="col-md-1 px-0">
+                <div class="col-12 col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div class="col-3 col-md-2">
                             <div style="border:2px solid #0d1f41;"></div>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-9 col-md-10 ">
                             <h4 class="m-0" style="color: #0d1f41;font-weight:bolder">Marusan Group</h4>
                         </div>
+                    </div>
+
+                    <div class="col-12 col-md-12">
                         <p class="my-2">
                             30 years of experience in Rope, Twine, and Hessian Cloth-making
                         </p>
@@ -144,23 +147,23 @@
                             More</a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-2 mt-md-0">
                     {{-- {{ asset('assets/images/design-1.jpg') }} --}}
-                    <img src="{{ asset('frontend/images/Jute.png') }}" class="w-100 img-fluid h-75">
+                    <img src="{{ asset('frontend/images/Jute.png') }}" class="img-thumbnail">
                 </div>
             </div>
         </div>
 
     </section>
-    <section class="my-5">
+    <section class="mb-3">
         <div class="container-fluid">
             <div class="row about-text" id="features">
                 <div class="" id="feature-image">
                     <!--background image will be here--><img src="" alt="">
                 </div>
-                <div class=" col-md-6 about-part">
+                <div class="col-12 col-md-6 about-part">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/1.png') }}">30 years of experience
                                     in
@@ -169,21 +172,21 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/2.png') }}">100% product supply in
                                     Asia, Europe, and America
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/3.png') }}">Two factories with
                                     top-tier production
                                     capabilities.</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/4.png') }}">Producing 19 tons of
                                     ropes, twine and hessian
@@ -359,9 +362,9 @@
                 <div class="col-sm-6 wow slideInLeft" style="visibility: hidden; animation-name: none;">
                     <div class="about-image-dl">
                         <a href="images/nylon-polyester-gill-net2.jpg">
-                            <img
-                                src="{{ asset('frontend/images/product/hesian-cloth.jpg') }}" alt="Multifilament gill net">
-                            </a>
+                            <img src="{{ asset('frontend/images/product/hesian-cloth.jpg') }}"
+                                alt="Multifilament gill net">
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">

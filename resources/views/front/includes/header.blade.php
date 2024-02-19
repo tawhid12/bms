@@ -198,7 +198,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -271,6 +271,9 @@
                                     <a class="dropdown-item" href="components/buttons.html">Company Profile</a>
                                     <a class="dropdown-item" href="components/icons.html">History</a>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Ebrochure</a>
                             </li>
                         </ul>
                     </div>
