@@ -145,7 +145,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/images/design-1.jpg') }}" class="w-100 img-fluid">
+                    {{-- {{ asset('assets/images/design-1.jpg') }} --}}
+                    <img src="{{ asset('frontend/images/Jute.png') }}" class="w-100 img-fluid">
                 </div>
             </div>
         </div>
