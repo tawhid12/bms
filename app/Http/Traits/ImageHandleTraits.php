@@ -18,7 +18,7 @@ trait ImageHandleTraits{
         }
     }
 
-    public function deleteImage($image, $path)
+    public function deleteImage($image, $path=null)
     {
         $oldImagePath = public_path("$path/$image");
         $oldImagePaththumb = public_path("$path/thumb/$image");

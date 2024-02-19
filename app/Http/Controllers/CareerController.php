@@ -26,6 +26,7 @@ class CareerController extends Controller
      */
     public function create()
     {
+        return view('career.create');
     }
 
     /**

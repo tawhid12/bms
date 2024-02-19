@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('upload_file');
-            $table->integer('bus_id');
+            $table->string('car_title')->nullable();
+            $table->string('car_des')->nullable();
+            $table->string('upload_file')->nullable();
             $table->timestamps();
         });
     }

@@ -18,8 +18,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders=Slider::paginate(10);
-        return view('slider.index',compact('sliders'));
+        $sliders = Slider::paginate(10);
+        return view('slider.index', compact('sliders'));
     }
 
     /**
@@ -30,7 +30,6 @@ class SliderController extends Controller
     public function create()
     {
         return view('slider.create');
-
     }
 
     /**
@@ -41,27 +40,24 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $slider=new Slider;
-            if($request->has('Picture'))
-            $slider->image=$this->resizeImage($request->Picture,'uploads/Slide_image',true,1920,803,true);
-            $slider->link=$request->Link;
-            $slider->short_title=$request->ShortTitle;
-            $slider->long_title=$request->LongTitle;
-            if($slider->save()){
-            Toastr::success('Slider Create Successfully!');
-            return redirect()->route(currentUser().'.slider.index');
-            } else{
-            Toastr::warning('Please try Again!');
-            return redirect()->back();
-        }
-        
-    }
-    catch (Exception $e){
+        try {
+            $slider = new Slider;
+            if ($request->has('picture'))
+                $slider->image = 'uploads/slide_image/thumb/' . $this->resizeImage($request->picture, 'uploads/slide_image', true, 1366, 768, true);
+            $slider->link = $request->link;
+            $slider->short_title = $request->short_title;
+            $slider->long_title = $request->long_title;
+            if ($slider->save()) {
+                Toastr::success('Slider Create Successfully!');
+                return redirect()->route(currentUser() . '.slider.index');
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
             Toastr::warning('Please try Again!');
             // dd($e);
             return back()->withInput();
-
         }
     }
 
@@ -84,8 +80,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $slider=Slider::findOrFail(encryptor('decrypt',$id));
-        return view('slider.edit',compact('slider'));
+        $slider = Slider::findOrFail(encryptor('decrypt', $id));
+        return view('slider.edit', compact('slider'));
     }
 
     /**
@@ -97,31 +93,26 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try{
-            $slider=Slider::findOrFail(encryptor('decrypt',$id));
+        try {
+            $slider = Slider::findOrFail(encryptor('decrypt', $id));
 
-            $path='uploads/Slide_image/thumb/';
-            if($request->has('Picture') && $request->Picture)
-            if($this->deleteImage($slider->image,$path))
-                $slider->image=$this->resizeImage($request->Picture,$path,true,1920,803,true);
-
-            $slider->link=$request->Link;
-            $slider->short_title=$request->ShortTitle;
-            $slider->long_title=$request->LongTitle;
-            if($slider->save()){
-            Toastr::success('Slider Update Successfully!');
-            return redirect()->route(currentUser().'.slider.index');
-            } else{
-             Toastr::warning('Please try Again!');
-             return redirect()->back();
+            if ($request->has('picture') && $request->picture)
+                if ($this->deleteImage($slider->image))
+                    $slider->image = 'uploads/slide_image/thumb/' . $this->resizeImage($request->picture, 'uploads/slide_image', true, 1366, 768, true);
+            $slider->link = $request->link;
+            $slider->short_title = $request->short_title;
+            $slider->long_title = $request->long_title;
+            if ($slider->save()) {
+                Toastr::success('Slider Update Successfully!');
+                return redirect()->route(currentUser() . '.slider.index');
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
             }
-            
-        }
-        catch (Exception $e){
+        } catch (Exception $e) {
             Toastr::warning('Please try Again!');
             // dd($e);
             return back()->withInput();
-
         }
     }
 
@@ -133,9 +124,9 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $cat= Slider::findOrFail(encryptor('decrypt',$id));
-        $path='uploads/Slide_image/thumb/';
-        if($this->deleteImage($cat->image,$path));
+        $cat = Slider::findOrFail(encryptor('decrypt', $id));
+        $path = 'uploads/Slide_image/thumb/';
+        if ($this->deleteImage($cat->image, $path));
         $cat->delete();
         Toastr::warning('Slider Deleted Permanently!');
         return redirect()->back();
