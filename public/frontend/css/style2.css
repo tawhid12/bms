@@ -397,7 +397,6 @@ a{
   /*=== Icn Section  ====*/
   .about-part p {
     font-size: 14px;
-    font-family: lato-bold;
     color: #FFF;
     text-shadow: 3px 3px 3px rgb(0,0,0);
     text-align: center;
@@ -421,7 +420,6 @@ a{
 }
 /*=========All Products====*/
 .cover-title h1 {
-  font-family: franklin-gothic-heavy;
   font-size: 50px;
   text-transform: uppercase;
   color: #fff;
@@ -436,19 +434,16 @@ a{
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .product-section h4 {
-  font-family: cambria;
   font-size: 22px;
   color: #087D0B;
 }
 .product-section  p {
   font-size: 20px;
-  font-family: lato-regular;
   color: #087D0B;
   padding: 0 0px 30px 0px;
 }
 .pro-btn{
     font-size: 20px;
-    font-family: inherit;
     color: rgba(0,0,0,0.75);
     border:1px solid rgba(8, 125, 11, 1);
     padding: 6px 20px;
@@ -520,7 +515,6 @@ a{
 }
 .featured-product h2 {
   color: #087D0B;
-  font-family: cambria;
   font-size: 30px;
   margin-bottom: 20px !important;
   border-bottom: 3px solid rgba(8, 125, 11, 1);
@@ -537,10 +531,9 @@ a{
   background-repeat: no-repeat;
 }
 #top-footer h2 {
-color: #fff;
-font-size: 20px;
-font-family: digital-serial-bold;
-padding-bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+  padding-bottom: 10px;
   margin-bottom: 20px !important;
   border-bottom: 3px solid rgba(8, 125, 11, 1); 
   display: inline-block;
@@ -548,13 +541,11 @@ padding-bottom: 10px;
 .footer-left p {
 color: #ccc;
 font-size: 14px;
-font-family: opensans-regular;
 padding: 0 38px 8px 0;
 }
 .footer-left > a,
 .footer-left ul li a{
   font-size: 14px;
-  font-family:opensans-regular;
   color:#ccc;
   padding-bottom: 8px;
   display: block;
@@ -580,7 +571,6 @@ background:#0d1f41;
 #footer p {
 color: #f0f0f0;
 font-size: 13px;
-font-family: lato-regular;
 padding: 10px 0;
 }
 .footer-social >a{
