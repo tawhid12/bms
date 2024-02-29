@@ -88,6 +88,8 @@ Route::get('/our-team', [front::class,'team'])->name('team');
 
 /*====Bms Page ==== */
 Route::get('/about-us', [front::class,'aboutus'])->name('aboutus');
+Route::get('/company-description', [front::class,'companydes'])->name('companydes');
+Route::get('/company-description', [front::class,'companydes'])->name('companydes');
 
 Route::group(['middleware' => 'unknownUser'], function () {
     Route::get('/admin-login', [auth::class,'signInForm'])->name('signInForm');
