@@ -25,7 +25,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="all_part about-bg">
+    <section class="all_part about-bg mt-5">
         <div class="container text-center">
             <div class="row about-text">
                 <div class="specification-img" style="max-height:800px"><img src="{{asset('frontend/images/about-us/1.jpg')}}"
