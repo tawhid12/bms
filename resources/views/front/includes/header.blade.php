@@ -224,9 +224,9 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                                 <a class="dropdown-item" href="{{ route('companydes') }}">company Description</a>
-                                <a class="dropdown-item" href="about-2.html">President Speech</a>
-                                <a class="dropdown-item" href="about-2.html">Mission</a>
-                                <a class="dropdown-item" href="about-2.html">Vission</a>
+                                <a class="dropdown-item" href="{{route('presidentsp')}}">President Speech</a>
+                                <a class="dropdown-item" href="{{route('mission')}}">Mission</a>
+                                <a class="dropdown-item" href="{{route('vission')}}">Vission</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -235,9 +235,10 @@
                                 All Products
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="service.html">Rope</a>
-                                <a class="dropdown-item" href="service-2.html">Twin</a>
-                                <a class="dropdown-item" href="service-single.html">Hessian</a>
+                                <a class="dropdown-item" href="{{route('allproducts')}}">All Products</a>
+                                <a class="dropdown-item" href="">Rope</a>
+                                <a class="dropdown-item" href="">Twin</a>
+                                <a class="dropdown-item" href="">Hessian</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -246,13 +247,13 @@
                                 Gallery
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="team.html">Photo</a>
-                                <a class="dropdown-item" href="pricing.html">Video</a>
-                                <a class="dropdown-item" href="project.html">Achievement</a>
+                                <a class="dropdown-item" href="">Photo</a>
+                                <a class="dropdown-item" href="">Video</a>
+                                <a class="dropdown-item" href="">Achievement</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Career</a>
+                            <a class="nav-link" href="">Career</a>
                         </li>
                         {{-- <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Media Center</a>
@@ -263,8 +264,8 @@
                                 Contact
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog.html">BMS Company Limited</a>
-                                <a class="dropdown-item" href="blog-sidebar.html">BMS Rope Company Limited</a>
+                                <a class="dropdown-item" href="">BMS Company Limited</a>
+                                <a class="dropdown-item" href="">BMS Rope Company Limited</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -273,12 +274,12 @@
                                 Mother company
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="components/buttons.html">Company Profile</a>
-                                <a class="dropdown-item" href="components/icons.html">History</a>
+                                <a class="dropdown-item" href="{{route('companyprofile')}}">Company Profile</a>
+                                <a class="dropdown-item" href="{{route('companyhistory')}}">History</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Ebrochure</a>
+                            <a class="nav-link" href="">Ebrochure</a>
                         </li>
                     </ul>
                 </div>

@@ -221,4 +221,24 @@ class FrontendController extends Controller
     public function companydes(){
         return view('front.company-des');
     }
+    public function presidentsp(){
+        return view('front.president-speech');
+    }
+    public function mission(){
+        return view('front.mission');
+    }
+    public function vission(){
+        return view('front.vission');
+    }
+    public function allproducts(){
+        return view('front.all-products');
+    }
+
+
+    public function companyprofile(){
+        return view('front.company-profile');
+    }
+    public function companyhistory(){
+        return view('front.company-history');
+    }
 }

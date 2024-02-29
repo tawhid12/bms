@@ -89,7 +89,12 @@ Route::get('/our-team', [front::class,'team'])->name('team');
 /*====Bms Page ==== */
 Route::get('/about-us', [front::class,'aboutus'])->name('aboutus');
 Route::get('/company-description', [front::class,'companydes'])->name('companydes');
-Route::get('/company-description', [front::class,'companydes'])->name('companydes');
+Route::get('/president-speech', [front::class,'presidentsp'])->name('presidentsp');
+Route::get('/mission', [front::class,'mission'])->name('mission');
+Route::get('/vission', [front::class,'vission'])->name('vission');
+Route::get('/all-products', [front::class,'allproducts'])->name('allproducts');
+Route::get('/company-profile', [front::class,'companyprofile'])->name('companyprofile');
+Route::get('/company-history', [front::class,'companyhistory'])->name('companyhistory');
 
 Route::group(['middleware' => 'unknownUser'], function () {
     Route::get('/admin-login', [auth::class,'signInForm'])->name('signInForm');
