@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/slick/slick-theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/animate.min.css') }}">
-    {{--<link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}"> --}}
 
 
     <link rel="stylesheet" href="{{ asset('frontend/css/style2.css') }}">
@@ -194,227 +194,98 @@
             </div>
         </div>
         <!-- nav bar -->
-        <div class="navigation">
-            <div class="container">
+        @if (url('/') === request()->url())
+            <div class="navigation">
+            @else
+                <div class="navigation custom-nav">
+        @endif
+        <div class="container">
+            @if (url('/') === request()->url())
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                @else
+                    <nav class="navbar navbar-expand-lg navbar-light">
+            @endif
+            <a class="navbar-brand" href="index.html">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
 
-                            <li class="nav-item active">
-                                <a class="nav-link" href="contact.html">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    About Us
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.html">company Description</a>
-                                    <a class="dropdown-item" href="about-2.html">President Speech</a>
-                                    <a class="dropdown-item" href="about-2.html">Mission</a>
-                                    <a class="dropdown-item" href="about-2.html">Vission</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    All Products
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="service.html">Rope</a>
-                                    <a class="dropdown-item" href="service-2.html">Twin</a>
-                                    <a class="dropdown-item" href="service-single.html">Hessian</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Gallery
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="team.html">Photo</a>
-                                    <a class="dropdown-item" href="pricing.html">Video</a>
-                                    <a class="dropdown-item" href="project.html">Achievement</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Career</a>
-                            </li>
-                            {{-- <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ route('aboutus') }}" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="about.html">company Description</a>
+                            <a class="dropdown-item" href="about-2.html">President Speech</a>
+                            <a class="dropdown-item" href="about-2.html">Mission</a>
+                            <a class="dropdown-item" href="about-2.html">Vission</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            All Products
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="service.html">Rope</a>
+                            <a class="dropdown-item" href="service-2.html">Twin</a>
+                            <a class="dropdown-item" href="service-single.html">Hessian</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Gallery
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="team.html">Photo</a>
+                            <a class="dropdown-item" href="pricing.html">Video</a>
+                            <a class="dropdown-item" href="project.html">Achievement</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Career</a>
+                    </li>
+                    {{-- <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Media Center</a>
                             </li> --}}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Contact
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="blog.html">BMS Company Limited</a>
-                                    <a class="dropdown-item" href="blog-sidebar.html">BMS Rope Company Limited</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mother company
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="components/buttons.html">Company Profile</a>
-                                    <a class="dropdown-item" href="components/icons.html">History</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Ebrochure</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Contact
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">BMS Company Limited</a>
+                            <a class="dropdown-item" href="blog-sidebar.html">BMS Rope Company Limited</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Mother company
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="components/buttons.html">Company Profile</a>
+                            <a class="dropdown-item" href="components/icons.html">History</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Ebrochure</a>
+                    </li>
+                </ul>
             </div>
+            </nav>
+        </div>
         </div>
     </header>
     {{-- {{ asset('assets/images/design-hero.jpg') }} --}}
-    <section>
-        <div class="hero-slider position-relative">
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/1.png') }});" data-icon="ti-comments"
-                data-text="Consultation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/2.png') }});" data-icon="ti-bar-chart"
-                data-text="Marketting">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/3.png') }});" data-icon="ti-money"
-                data-text="Finance">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/4.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/5.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/6.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>

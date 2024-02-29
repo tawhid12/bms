@@ -8,113 +8,143 @@
     </style>
 @endpush
 @section('content')
-
-    {{-- <section class="hidden-xs">
-        <div class="fullscreenbanner">
-            <div class="banner">
-                <ul>
-                    @forelse ($slider as $slide)
-                    <li data-transition="curtain-3" data-slotamount="15" data-masterspeed="500">
-                        <img src="{{asset($slide->image)}}" alt="{{$loop->index}}" data-bgfit="cover"class="img-responsive">
-                    </li>
-                    @empty
-                    @endforelse
-                </ul>
+    <section>
+        <div class="hero-slider position-relative">
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/1.png') }});" data-icon="ti-comments"
+                data-text="Consultation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/2.png') }});" data-icon="ti-bar-chart"
+                data-text="Marketting">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/3.png') }});" data-icon="ti-money"
+                data-text="Finance">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/4.png') }});" data-icon="ti-package"
+                data-text="Human Resources">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/5.png') }});" data-icon="ti-package"
+                data-text="Human Resources">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('frontend/images/slide/6.png') }});" data-icon="ti-package"
+                data-text="Human Resources">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content">
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1"></h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".5">
+                                </h1>
+                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".9">
+                                </p>
+                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="icon-bar icon-bar-right" id="overlay-icon">
-        <div class="row wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
-            <ul>
-                <li><a href="">Twine<img src="https://dummyimage.com/105x105/2f9e7d/fff"></a></li>
-
-                <li><a href="">Rope<img src="https://dummyimage.com/105x105/2f9e7d/fff"></a></li>
-                <li><a href="">Hessian Cloth<img src="https://dummyimage.com/105x105/2f9e7d/fff"></a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="all_part about-bg" id="overview">
-        <div class="container text-center">
-            <div class="row about-text">
-                <div class="banner-overlay-text">
-                    <h1></h1>
-                </div>
-                <h2>Marusan Group</h2>
-                <p class="mx-0">30 years of experience in Rope, Twine, and Hessian Cloth-making</p>
-                <p class="mx-0">100% Japanese-owned company that is a subsidiary of Marusan Sangyo Co., Ltd, Japan.
-                </p>
-                <p>
-                    Marusan Sangyo Company Limited is the mother company of BMS and BMS Rope which is located in Tochigi
-                    City,
-                    Japan. BMS and BMS Rope are leading manufacturers and exporters of high-quality rope, twine and
-                    hessian cloth
-                    for a wide range of industries and applications. With over 30 years of experience in the industry,
-                    we have
-                    established ourselves as a trusted name in rope manufacturing, known for our commitment to
-                    excellence and
-                    customer satisfaction.</p>
-                <p>We specialise in producing various types of ropes, twine, and hessian cloths for a wide range of
-                    applications.
-                    These products are typically made by twisting or braiding strands of fibres together to create a
-                    strong and
-                    durable product. We use different materials such as natural fibres (like jute, cotton and sisal),
-                    synthetic
-                    fibres (like PE, PP, nylon, polyester etc.), or a combination.
-                </p>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row about-text" id="features">
-                <div class="specification-img" id="feature-image">
-                    <!--background image will be here--><img src="" alt="">
-                </div>
-                <div class=" col-sm-6 about-part">
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/1.png')}}">30 years of experience in Rope, Twine, and
-                            Hessian Cloth Making.
-                        </p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/2.png')}}">100% product supply in Asia, Europe, and America
-                        </p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/3.png')}}">Two factories with top-tier production
-                            capabilities.</p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/4.png')}}">Producing 19 tons of ropes, twine and hessian
-                            cloths daily for
-                            consistent supply.</p>
-                    </div>
-                </div>
-                <div class=" col-sm-6 about-part">
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/5.png')}}">Employing advanced Japanese and Chinese
-                            technology with highly
-                            efficient machinery.</p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/6.png')}}">ISO 9001:2015 certification attests to our
-                            commitment to quality
-                            management standards.</p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/7.png')}}">Sustainable and environmentally conscious
-                            natural products</p>
-                    </div>
-                    <div class="feature-icon">
-                        <p class="bol"><img src="{{asset('frontend/images/icn/8.png')}}">Strategic partner actively contributing to the
-                            fulfilment of
-                            Sustainable Development Goals (SDG) targets.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="about-company">
         <div class="container">
             <div class="row">
@@ -386,56 +416,7 @@
             </div>
         </div>
     </section>
-    <footer id="top-footer"> <a class="bc2top" style="display: none;"><i class="fa fa-arrow-up"
-                aria-hidden="true"></i></a>
-        <div class="container">
 
-            <div class="row">
-                <div class="  col-sm-3 footer-left wow slideInUp" id="company-list"
-                    style="visibility: hidden; animation-name: none;">
-                    <h2>Our Concerns</h2>
-                    <ul>
-                        <li><a href=""><i class="fa fa-angle-right"></i>Bms Company Limited</a></li>
-                        <li><a href=""><i class="fa fa-angle-right"></i>Bms Rope Company Limited</a></li>
-                    </ul>
-                </div>
-                <div class="  col-sm-3 footer-left wow slideInRight" style="visibility: hidden; animation-name: none;">
-                    <h2>Head Office</h2><br>
-                    <p>Marusan Sangyo Co. Ltd.</p>
-                    <p><i class="fa fa-home"></i>912-nonaka cho, tochigi city, Tochigi prefecture, japan.</p>
-                    <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-                    <p><i class="fa fa-mobile-phone"></i>0282-24-8803 | <i class="fa fa-fax"></i>0282-24-8803</p>
-                </div>
-                <div class=" col-sm-3  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
-                    <h2>BMS Company Limited</h2>
-                    <p></p>
-                    <p><i class="fa fa-home"></i>Plot No. 1~ 6. Sector -4, C.E.P.Z. Chittagong, Bangladesh.</p>
-                    <!-- <a href=""><i class="fa fa-envelope-o"></i>info@bms-rope.com</a><br><br> -->
-                    <p><i class="fa fa-mobile-phone"></i>88-02333341010 | <i class="fa fa-fax"></i>88-02333340067 </p>
-                </div>
-                <div class=" col-sm-3  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
-
-                    <h2>BMS Rope Company. Ltd.</h2>
-                    <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
-                    <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-                    <p><i class="fa fa-mobile-phone"></i>88-02333342065 | <i class="fa fa-fax"></i>88-02333342064</p>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </footer>
-    <footer id="footer">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-12">
-                    <p>Copyright © 2023 || BMS Rope</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 @endsection
 @push('scripts')

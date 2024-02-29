@@ -215,4 +215,7 @@ class FrontendController extends Controller
         $logo = OurBusiness::get();
         return view('front.groupLogo',compact('logo'));
     }
+    public function aboutus(){
+        return view('front.about');
+    }
 }

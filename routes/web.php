@@ -83,6 +83,12 @@ Route::get('/our-brands', [front::class,'brand'])->name('brand');
 Route::get('/our-team', [front::class,'team'])->name('team');
 
 
+
+
+
+/*====Bms Page ==== */
+Route::get('/about-us', [front::class,'aboutus'])->name('aboutus');
+
 Route::group(['middleware' => 'unknownUser'], function () {
     Route::get('/admin-login', [auth::class,'signInForm'])->name('signInForm');
     Route::post('/login', [auth::class,'signIn'])->name('login.check');
@@ -155,5 +161,9 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
 });
 Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
 Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
+
+
+
+
        
 
