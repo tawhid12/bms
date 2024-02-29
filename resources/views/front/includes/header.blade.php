@@ -217,11 +217,12 @@
                             <a class="nav-link" href="contact.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="{{ route('aboutus') }}"
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About Us
                             </a>
                             <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                                 <a class="dropdown-item" href="about.html">company Description</a>
                                 <a class="dropdown-item" href="about-2.html">President Speech</a>
                                 <a class="dropdown-item" href="about-2.html">Mission</a>
