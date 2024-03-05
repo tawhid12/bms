@@ -21,7 +21,9 @@ use App\Models\Blog;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\Category;
 use App\Models\Report;
+use App\Models\SubCategory;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 use DB;
@@ -231,9 +233,14 @@ class FrontendController extends Controller
         return view('front.vission');
     }
     public function allproducts(){
-        return view('front.all-products');
+        $categories = Category::with('subcategories')->get();
+        return view('front.all-products',compact('categories'));
     }
-
+    public function singleproduct($slug){
+        $subcategory = Subcategory::where('slug_name', $slug)->firstOrFail();
+        //print_r($subcategory);
+        return view('front.single-product',compact('subcategory'));
+    }
 
     public function companyprofile(){
         return view('front.company-profile');

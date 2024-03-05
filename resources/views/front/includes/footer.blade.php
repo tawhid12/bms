@@ -49,7 +49,8 @@
     </div>
 </div>
 </footer>
-<script src="{{asset('frontend/js/jquery.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="{{asset('assets/js/jquery-1.11.3.min.js')}}"></script>
 <script src="{{asset('assets/bootstrap/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/plugins/slick/slick.min.js')}}"></script>
 {{-- <script type="text/javascript" src="{{asset('frontend/js/nivo-lightbox.min.js')}}"></script>
@@ -64,9 +65,8 @@
 <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script> 
 
 <script>
-// var filterizd = $('.filtr-container').filterizr({
-//options object
-// });
+ var filterizd = $('.filtr-container').filterizr({
+ });
 </script>
 
 </body>

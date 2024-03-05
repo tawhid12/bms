@@ -93,6 +93,9 @@ Route::get('/president-speech', [front::class,'presidentsp'])->name('presidentsp
 Route::get('/mission', [front::class,'mission'])->name('mission');
 Route::get('/vission', [front::class,'vission'])->name('vission');
 Route::get('/all-products', [front::class,'allproducts'])->name('allproducts');
+Route::get('/{slug}', [front::class,'singleproduct'])->name('singleproduct');
+
+Route::get('/company-profile', [front::class,'companyprofile'])->name('companyprofile');
 Route::get('/company-profile', [front::class,'companyprofile'])->name('companyprofile');
 Route::get('/company-history', [front::class,'companyhistory'])->name('companyhistory');
 

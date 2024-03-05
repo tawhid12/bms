@@ -22,3 +22,5 @@ $('.hero-slider').slick({
     }]
   });
   $('.hero-slider').slickAnimation();
+
+  
