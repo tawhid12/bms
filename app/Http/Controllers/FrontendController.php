@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\About;
-use App\Models\Brand;
+use App\Models\Product;
+use App\Models\Ebrochure;
+use App\Models\Career;
 use App\Models\Page;
 use App\Models\year;
 use App\Models\Frontend;
@@ -47,76 +49,7 @@ class FrontendController extends Controller
                             $query->where('unpublished_date', '>',$today);
                             $query->orWhereNull('unpublished_date');
                         })->latest()->limit(12)->get();*/
-        $about= About::first();
-        $brands=Brand::get();
-        /*echo '<pre>';
-        print_r($brands);die;*/
-        $partners=Partner::orderBy('id','desc')->limit(3)->get();
-        $our_business=OurBusiness::get();
-        $blogs=Blog::get();
-        return view('front.home',compact('slider','scroll_notice','about','brands','partners','our_business','blogs'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function benefit()
-    {
-        $benefit=BenefitsOfMember::all();
-        return view('frontend.benefit',compact('benefit'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function contactUs()
-    {
-        $contactReason = contact_reason::all();
-        return view('frontend.membership.contact',compact('contactReason'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function newsEventsDetail($id)
-    {
-        $detail = video_notice::where('id',$id)->first();
-        $newsEv = video_notice::all();
-        return view('frontend.notice.newsEvents',compact('newsEv','detail'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function newsEvents()
-    {
-        $detail = video_notice::first();
-        $newsEv = video_notice::paginate(12);
-        return view('frontend.notice.newsEvents',compact('newsEv','detail'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Frontend  $frontend
-     * @return \Illuminate\Http\Response
-     */
-    public function nwesSearch(Request $request)
-    {
-        $search = $request['name']?? "";
-        $news = video_notice::query();
-
-        if ($search != "") {
-            $news->where('title', 'LIKE', '%'.$search.'%');
-        }
-
-        $newsEv = $news->paginate(12);
-        return view('frontend.notice.newsEvents', compact('newsEv','search'));
+        return view('front.home',compact('slider','scroll_notice'));
     }
 
     /**
@@ -135,88 +68,10 @@ class FrontendController extends Controller
 
         return view('frontend.notice.notice',compact('notice'));
     }
-    
-    /* get daynamic page */
-    public function page($slug)
-    {
-        $page_data= Page::where('page_slug',"$slug")->where('published',1)->first();
-        return view('front.Page.index',compact('page_data'));
-    }
 
-    /* get daynamic page */
-    public function club_dues(Request $r)
-    {
-        $members = array();
-        if($r->input('member_type') && $r->input('search')){
-            $searchText=$r->input('search');
-            $members = total_due::where('member_type', $r->input('member_type'))
-                            ->where(function($query) use ($searchText){
-                                $query->orWhereHas('member', function($q) use ($searchText) {
-                                    $q->where(function($q) use ($searchText) {
-                                        $q->where('membership_no', $searchText);
-                                        $q->orwhere('given_name', $searchText);
-                                    });
-                                });
-                            })->first();
-        }
-        return view('frontend.club_dues',compact('members'));
-    }
-    public function singleBusinessPage($page_slug)
-    {
-        $data = OurBusiness::where('page_slug', $page_slug)->firstOrFail();
-        return view('front.single_business_page',compact('data'));
-    }
-    public function career(){
-        $data =  OurBusiness::get();
-        return view('front.career',compact('data'));
-    }
-    public function report(){
-        $report = Report::orderBy('id', 'desc')->first();
-        return view('front.finace_report',compact('report'));
-    }
-    public function contact(){
-        return view('front.contact');
-    }
-    public function brand(){
-        $brands = Brand::paginate(10);
-        return view('front.our_brand',compact('brands'));
-    }
-    public function team(){
-        $our_team = OurMember::all();
-        return view('front.our_team',compact('our_team'));
-    }
-    public function overview(){
-        $m = Message::first();
-        return view('front.overview',compact('m'));
-    }
-    public function foundermsg (){
-        $m = Message::first();
-        return view('front.foundermsg',compact('m'));
-    }
-    public function chairpersonMsg (){
-        $m = Message::first();
-        return view('front.chairpersonMsg',compact('m'));
-    }
-    public function boardDirect (){
-        $our_team = OurMember::all();
-        return view('front.board_director',compact('our_team'));
-    }
-    public function keyManagement (){
-        $m = Message::first();
-        return view('front.keyManagement',compact('m'));
-    }
-    public function msnVsn (){
-        $m = Message::first();
-        return view('front.msnVsn',compact('m'));
-    }
-    public function csr (){
-        $m = Message::first();
-        return view('front.csr',compact('m'));
-    }
-    public function groupLogo (){
-        $logo = OurBusiness::get();
-        return view('front.groupLogo',compact('logo'));
-    }
+
+
+   
     public function aboutus(){
         return view('front.about');
     }
@@ -233,13 +88,13 @@ class FrontendController extends Controller
         return view('front.vission');
     }
     public function allproducts(){
-        $categories = Category::with('subcategories')->get();
+        $categories = Category::with('products')->get();
         return view('front.all-products',compact('categories'));
     }
     public function singleproduct($slug){
-        $subcategory = Subcategory::where('slug_name', $slug)->firstOrFail();
+        $product = Product::where('slug',$slug)->first();
         //print_r($subcategory);
-        return view('front.single-product',compact('subcategory'));
+        return view('front.single-product',compact('product'));
     }
 
     public function companyprofile(){
@@ -247,5 +102,23 @@ class FrontendController extends Controller
     }
     public function companyhistory(){
         return view('front.company-history');
+    }
+    public function allbrochure(){
+        $ebrochures = Ebrochure::paginate(10);
+        return view('front.all-ebrochure',compact('ebrochures'));
+    }
+    public function singlebrochure($slug){
+        $ebrochure = Ebrochure::where('slug',$slug)->first();
+        return view('front.single-ebrochure',compact('ebrochure'));
+    }
+    public function career(){
+        $careers =  Career::paginate(10);
+        return view('front.career',compact('careers'));
+    }
+    public function bmscompany(){
+        return view('front.bms-company-contact');
+    }
+    public function bmsrope(){
+        return view('front.bms-rope-contact');
     }
 }

@@ -22,6 +22,7 @@ class PhotoGallaryController extends Controller
     public function index(Request $request)
     {
         $images = photoGallary::where('photo_gallary_category_id',$request->gid)->get()->toArray();
+        dd($images);
         foreach($images as $image){
             $tableImages[] = $image['feature_image'];
         }

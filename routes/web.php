@@ -33,10 +33,10 @@ use App\Http\Controllers\FrontMenuController as frontMenu;
 
 use App\Http\Controllers\PageController as page;
 
-use App\Http\Controllers\BrandController as brand;
-use App\Http\Controllers\PartnerController as partner;
-use App\Http\Controllers\OurBusinessController as ourbs;
-use App\Http\Controllers\BlogController as blog;
+use App\Http\Controllers\CategoryController as category;
+use App\Http\Controllers\SubCategoryController as subcat;
+use App\Http\Controllers\EbrochureController as ebrochure;
+use App\Http\Controllers\ProductController as product;
 use App\Http\Controllers\AboutUsPageController as aboutpage;
 use App\Http\Controllers\CareerController as career;
 use App\Http\Controllers\ReportController as rep;
@@ -46,7 +46,7 @@ use App\Http\Controllers\MessageController as msg;
 
 /* Middleware */
 use App\Http\Middleware\isSuperadmin;
-
+use App\Http\Middleware\unknownUser;
 
 
 /*
@@ -64,38 +64,17 @@ use App\Http\Middleware\isSuperadmin;
 Route::get('/mail', [test::class,'index'])->name('mail');
 /* === Page ==== */
 Route::get('/',[front::class,'index'])->name('front');
-Route::get('/overview',[front::class,'overview'])->name('overview');
-Route::get('/founder-chairman',[front::class,'foundermsg'])->name('foundermsg');
-Route::get('/chairperson-message',[front::class,'chairpersonMsg'])->name('chairpersonMsg');
-Route::get('/managing-director-message',[front::class,'overview'])->name('managingDirMsg');
-Route::get('/board-directories',[front::class,'boardDirect'])->name('boardDirect');
-Route::get('/key-management',[front::class,'keyManagement'])->name('keyManagement');
-Route::get('/our-mission-vission',[front::class,'msnVsn'])->name('msnVsn');
-Route::get('/csr',[front::class,'csr'])->name('csr');
-Route::get('/group-logo',[front::class,'groupLogo'])->name('groupLogo');
-
 Route::get('/career', [front::class,'career'])->name('career');
-Route::resource('car', career::class)->only(['store']);
-Route::get('/financial-report', [front::class,'report'])->name('report');
 Route::get('/contact-us', [front::class,'contact'])->name('contact');
 Route::resource('contact', contact::class)->only(['store']);
-Route::get('/our-brands', [front::class,'brand'])->name('brand');
-Route::get('/our-team', [front::class,'team'])->name('team');
 
 
 
 
 
-/*====Bms Page ==== */
-Route::get('/about-us', [front::class,'aboutus'])->name('aboutus');
-Route::get('/company-description', [front::class,'companydes'])->name('companydes');
-Route::get('/president-speech', [front::class,'presidentsp'])->name('presidentsp');
-Route::get('/mission', [front::class,'mission'])->name('mission');
-Route::get('/vission', [front::class,'vission'])->name('vission');
-Route::get('/all-products', [front::class,'allproducts'])->name('allproducts');
-Route::get('/{slug}', [front::class,'singleproduct'])->name('singleproduct');
 
-Route::get('/company-profile', [front::class,'companyprofile'])->name('companyprofile');
+
+
 Route::get('/company-profile', [front::class,'companyprofile'])->name('companyprofile');
 Route::get('/company-history', [front::class,'companyhistory'])->name('companyhistory');
 
@@ -115,7 +94,7 @@ Route::get('video_gallery', [media::class,'vGallery'])->name('vGallery');
 Route::get('/vAlbum/{slug}', [media::class,'videoAlbum'])->name('vAlbum');
 Route::get('/video/{slug}', [media::class,'video'])->name('video');
 
-Route::get('{page_slug}', [front::class,'singleBusinessPage'])->name('singleBusinessPage');
+
 
 // Super Admin
 Route::group(['middleware' => 'isSuperadmin'], function () {
@@ -136,8 +115,6 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
 
         Route::resource('notice', notice::class, ["as" => "superadmin"]);
         Route::resource('slider',SliderController::class,['as'=>'superadmin']);
-        Route::resource('ourMember',member::class,['as'=>'superadmin']);
-        Route::resource('facilities',facilities::class,['as'=>'superadmin']);
         Route::resource('year',year::class,['as'=>'superadmin']);
         Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'superadmin']);
         Route::resource('pGallery',pGallery::class,['as'=>'superadmin']);
@@ -154,25 +131,30 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('superadmin.front_menu.detroy');
 
        
-        Route::resource('page',page::class,['as'=>'superadmin']);
-        Route::resource('aboutus',aboutus::class,['as'=>'superadmin']);
-        Route::resource('brand',brand::class,['as'=>'superadmin']);
-        Route::resource('partner',partner::class,['as'=>'superadmin']);
-        Route::resource('business',ourbs::class,['as'=>'superadmin']);
-        Route::resource('blog',blog::class,['as'=>'superadmin']);
-        Route::resource('aboutpage',aboutpage::class,['as'=>'superadmin']);
+        
         Route::resource('car', career::class,['as'=>'superadmin']);
-        Route::resource('report', rep::class,['as'=>'superadmin']);
         Route::resource('contact', contact::class,['as'=>'superadmin']);
         Route::resource('setting', setting::class,['as'=>'superadmin']);
-        Route::resource('message', msg::class,['as'=>'superadmin']);
+
+        Route::resource('category', category::class,['as'=>'superadmin']);
+        Route::resource('subcategory', subcat::class,['as'=>'superadmin']);
+        Route::resource('ebrochure', ebrochure::class,['as'=>'superadmin']);
+        Route::resource('product', product::class,['as'=>'superadmin']);
     });
 
 });
-Route::get('/page/{slug}', [front::class,'page'])->name('front.page');
-Route::post('image-upload', [page::class, 'storeImage'])->name('image.upload');
 
-
+/*====Bms Page ==== */
+Route::get('/about-us', [front::class,'aboutus'])->name('aboutus');
+Route::get('/company-description', [front::class,'companydes'])->name('companydes');
+Route::get('/bms-company', [front::class,'bmscompany'])->name('bmscompany');
+Route::get('/bms-rope', [front::class,'bmsrope'])->name('bmsrope');
+Route::get('/president-speech', [front::class,'presidentsp'])->name('presidentsp');
+Route::get('/mission', [front::class,'mission'])->name('mission');
+Route::get('/vission', [front::class,'vission'])->name('vission');
+Route::get('/all-products', [front::class,'allproducts'])->name('allproducts');
+Route::get('/all-ebrochure', [front::class,'allbrochure'])->name('allbrochure');
+Route::get('/{slug}', [front::class,'singleproduct'])->name('singleproduct');
 
 
        

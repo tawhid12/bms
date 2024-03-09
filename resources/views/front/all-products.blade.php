@@ -44,18 +44,18 @@
                             @forelse ($categories as $key => $category)
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
                                     style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
-                                    @forelse($category->subcategories as $subcategory)
+                                    @forelse($category->products as $product)
                                         <div class="latest-slider-img">
                                             <img src="{{ asset('frontend/images/products/braid-rop/1.jpg') }}"
                                                 alt="" class="img-fluid w-100 h-100 img-1">
                                             <img src="{{ asset('frontend/images/products/braid-rop/2.jpg') }}"
                                                 alt="" class="img-fluid w-100 h-100 img-2">
                                             <div class="ovr-top text-center">
-                                                <h3>{{ $subcategory->sub_cat_name }}</h3>
-                                                <a href="{{route('singleproduct',$subcategory->slug_name)}}">Product details<i class="fa fa-share-square-o"></i></a>
+                                                <h3>{{ $product->title }}</h3>
+                                                <a href="{{route('singleproduct',$product->slug)}}">Product details<i class="fa fa-share-square-o"></i></a>
                                             </div>
                                         </div>
-                                        <h4>{{ $subcategory->sub_cat_name }}</h4>
+                                        <h4>{{ $product->title }}</h4>
                                     @empty
                                     @endforelse
                                 </div>

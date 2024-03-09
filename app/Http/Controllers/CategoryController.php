@@ -8,7 +8,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
 use Exception;
 
-class BrandController extends Controller
+class CategoryController extends Controller
 {
     use ImageHandleTraits;
     /**

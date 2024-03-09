@@ -4,7 +4,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="  col-sm-3 footer-left wow slideInUp" id="company-list"
+        <div class="col-sm-3 footer-left wow slideInUp" id="company-list"
             style="visibility: hidden; animation-name: none;">
             <h2>Our Concerns</h2>
             <ul>
@@ -61,7 +61,7 @@
 {{-- <script type="text/javascript" src="{{asset('frontend/js/slick.min.js')}}"></script> --}}
 <script type="text/javascript" src="{{asset('frontend/js/jquery.filterizr.js')}}"></script>
 <script type="text/javascript" src="{{asset('frontend/js/wow.min.js')}}"></script>
-{{-- <script type="text/javascript" src="{{asset('frontend/js/custome.js')}}"></script> --}}
+<script type="text/javascript" src="{{asset('frontend/js/custome.js')}}"></script>
 <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script> 
 
 <script>

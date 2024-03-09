@@ -64,37 +64,36 @@
                             <ul class="submenu ">
                                 <li class="submenu-item"><a href="{{route(currentUser().'.year.index')}}">{{__('Album Year')}}</a></li>
                                 <li class="submenu-item"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('Photo Album')}}</a></li>
-                                <li class="submenu-item"><a href="{{route(currentUser().'.pGallery.index')}}">{{__('Photo')}}</a></li>
                                 <li class="submenu-item"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('Video Album')}}</a></li>
-                                <li class="submenu-item"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('Video')}}</a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-title">Brand &amp; Partner &amp; Business</li>
+                        <li class="sidebar-title">Categories</li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.brand.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.category.index')}}" class="sidebar-link">
                                 <i class="bi bi-grid"></i>
-                                <span>Brand</span>
+                                <span>Categories</span>
                             </a>
                         </li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.partner.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.subcategory.index')}}" class="sidebar-link">
                                 <i class="bi bi-person-square"></i>
-                                <span>Partner</span>
+                                <span>SubCategory</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-title">Product &amp; Ebrochure</li>
+                        <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.ebrochure.index')}}" class="sidebar-link">
+                                <i class="bi bi-hdd-network-fill"></i>
+                                <span>Ebrochure</span>
                             </a>
                         </li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.business.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.product.index')}}" class="sidebar-link">
                                 <i class="bi bi-hdd-network-fill"></i>
-                                <span>Business</span>
+                                <span>Product</span>
                             </a>
                         </li>
-                        <li class="submenu-item sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
-                            <ul class="submenu">
-                                <li class="submenu-item"><a href="{{route(currentUser().'.page.index')}}">{{__('Web Page')}}</a></li>
-                                <li class="submenu-item"><a href="{{route(currentUser().'.front_menu.index')}}"> {{__('Manage Menu')}}</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -133,56 +132,24 @@
                             <a href="{{route(currentUser().'.notice.index')}}">Notice</a>
                         </li> -->
 
-                        <li class="submenu-item">
+                        {{-- <li class="submenu-item">
                             <a href="{{route(currentUser().'.message.index')}}" class="sidebar-link">
                                 <i class="bi bi-envelope-arrow-up-fill"></i>
                                 <span>Message</span>
                             </a>
-                        </li>
+                        </li> --}}
 
-                        <!-- <li class="submenu-item ">
-                                    <a href="{{route(currentUser().'.role.index')}}">Role</a>
-                                </li> -->
                     </ul>
                 </li>
 
-                <li class="sidebar-item  ">
-                    <a href="{{route(currentUser().'.aboutus.index')}}" class="sidebar-link">
-                        <i class="bi bi-hourglass-bottom"></i>
-                        <span>About Us Page</span>
-                    </a>
-                </li>
 
-                <li class="sidebar-item  ">
-                    <a href="{{route(currentUser().'.blog.index')}}" class="sidebar-link">
-                        <i class="bi bi-file-earmark-post"></i>
-                        <span>Blog (Post)</span>
-                    </a>
-                </li>
                 <li class="sidebar-item  ">
                     <a href="{{route(currentUser().'.car.index')}}" class="sidebar-link">
                         <i class="bi bi-bricks"></i>
                         <span>Career</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="{{route(currentUser().'.report.index')}}" class="sidebar-link">
-                        <i class="bi bi-bounding-box"></i>
-                        <span>Report</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
-                    <a href="{{route(currentUser().'.ourMember.index')}}" class="sidebar-link">
-                        <i class="bi bi-person"></i>
-                        <span>Our Member</span>
-                    </a>
-                </li>
-                <li class="sidebar-item  ">
-                    <a href="{{route(currentUser().'.contact.index')}}" class="sidebar-link">
-                        <i class="bi bi-ladder"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
+
 
 
 

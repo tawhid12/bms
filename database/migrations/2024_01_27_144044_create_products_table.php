@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('product_title')->nullable();
+            $table->string('title');
+            $table->string('slug')->unique()->index();
+            $table->foreignId('category_id')->constrained('categories');
+            //$table->foreignId('sub_category_id')->constrained('sub_categories');
+            $table->string('featured_image')->comment('product-page');
+            $table->tinyInteger('is_featured')->default(0);
+            $table->longText('tech_spec')->comment('Technical Specification');
             $table->string('product_des')->nullable();
-            $table->string('featured_image')->nullable();
+            $table->longText('che_res')->comment('Chemical Resistance');
+            $table->longText('pro_info')->comment('Production information');
+            $table->longText('feature')->comment('Feature');
+            $table->longText('srbsc')->comment('Sisal Rope Breaking Strength chart');
             $table->string('related_product_id')->nullable();
-            $table->string('upload_pdf')->nullable();
-            $table->string('dia_mm')->nullable();
-            $table->string('dia_inch')->nullable();
-            $table->string('cirm_inch')->nullable();
-            $table->string('mt')->nullable();
-            $table->integer('is_featured')->nullable();
-            $table->string('brand')->nullable();
-            $table->string('certification')->nullable();
-            $table->string('manufactured_by')->nullable();
-            $table->string('capacity')->nullable();
+            $table->foreignId('ebrochure_id')->constrained('ebrochures')->nullable();
             $table->timestamps();
         });
     }

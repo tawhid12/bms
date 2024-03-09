@@ -29,9 +29,7 @@ class AuthenticationController extends Controller
         if(!!$this->validUser($request))
            
             return redirect(route($this->validUser($request)->roleIdentity.'.Dashboard'))->with($this->resMessage(true, null, 'Log In successed'));
-        
-       
-            
+
         else
             return redirect(route('signInForm'))->with($this->resMessage(false, "error", 'Invalid username or password.'));
     }

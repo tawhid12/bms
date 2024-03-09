@@ -43,7 +43,7 @@
         });
     </script>
     <link rel="shortcut icon" type="image/png" href="">
-
+    @stack('styles')
 </head>
 
 <body>
@@ -201,7 +201,7 @@
         @endif
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="{{route('front')}}">
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -214,19 +214,19 @@
                     <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="contact.html">Home</a>
+                            <a class="nav-link" href="{{route('front')}}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 About Us
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                                 <a class="dropdown-item" href="{{ route('companydes') }}">company Description</a>
-                                <a class="dropdown-item" href="{{route('presidentsp')}}">President Speech</a>
-                                <a class="dropdown-item" href="{{route('mission')}}">Mission</a>
-                                <a class="dropdown-item" href="{{route('vission')}}">Vission</a>
+                                <a class="dropdown-item" href="{{ route('presidentsp') }}">President Speech</a>
+                                <a class="dropdown-item" href="{{ route('mission') }}">Mission</a>
+                                <a class="dropdown-item" href="{{ route('vission') }}">Vission</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -235,7 +235,7 @@
                                 All Products
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('allproducts')}}">All Products</a>
+                                <a class="dropdown-item" href="{{ route('allproducts') }}">All</a>
                                 <a class="dropdown-item" href="">Rope</a>
                                 <a class="dropdown-item" href="">Twin</a>
                                 <a class="dropdown-item" href="">Hessian</a>
@@ -247,13 +247,13 @@
                                 Gallery
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Photo</a>
+                                <a class="dropdown-item" href="{{route('pGallery')}}">Photo</a>
                                 <a class="dropdown-item" href="">Video</a>
                                 <a class="dropdown-item" href="">Achievement</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Career</a>
+                            <a class="nav-link" href="{{route('career')}}">Career</a>
                         </li>
                         {{-- <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Media Center</a>
@@ -264,8 +264,8 @@
                                 Contact
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">BMS Company Limited</a>
-                                <a class="dropdown-item" href="">BMS Rope Company Limited</a>
+                                <a class="dropdown-item" href="{{route('bmscompany')}}">BMS Company Limited</a>
+                                <a class="dropdown-item" href="{{route('bmsrope')}}">BMS Rope Company Limited</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -274,12 +274,22 @@
                                 Mother company
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('companyprofile')}}">Company Profile</a>
-                                <a class="dropdown-item" href="{{route('companyhistory')}}">History</a>
+                                <a class="dropdown-item" href="{{ route('companyprofile') }}">Company Profile</a>
+                                <a class="dropdown-item" href="{{ route('companyhistory') }}">History</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Ebrochure</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Ebrochure
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('allbrochure') }}">All</a>
+                                @foreach (\App\Models\Ebrochure::all() as $ebrochure)
+                                    <a class="dropdown-item"
+                                        href="{{ route('companyprofile') }}">{{ $ebrochure->slug }}</a>
+                                @endforeach
+                            </div>
                         </li>
                     </ul>
                 </div>

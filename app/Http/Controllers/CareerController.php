@@ -44,8 +44,9 @@ class CareerController extends Controller
                 $file = $request->file('upload_file');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/career/'), $fileName);
-                $c->bus_id = $request->bus_id;
-                $c->upload_file = $fileName;
+                $c->upload_file = 'uploads/career/'.$fileName;
+            }
+            $c->upload_file = $fileName;
                 if ($c->save()) {
                     Toastr::success('Submitted Successfully!');
                     return redirect()->back();
@@ -53,7 +54,7 @@ class CareerController extends Controller
                     Toastr::warning('Please try Again!');
                     return redirect()->back();
                 }
-            }
+            
         } catch (Exception $e) {
             Toastr::warning('Please try Again!');
             // dd($e);
