@@ -74,12 +74,12 @@
                                 <span>Categories</span>
                             </a>
                         </li>
-                        <li class="submenu-item sidebar-item">
+                        {{-- <li class="submenu-item sidebar-item">
                             <a href="{{route(currentUser().'.subcategory.index')}}" class="sidebar-link">
                                 <i class="bi bi-person-square"></i>
                                 <span>SubCategory</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="sidebar-title">Product &amp; Ebrochure</li>
                         <li class="submenu-item sidebar-item">
                             <a href="{{route(currentUser().'.ebrochure.index')}}" class="sidebar-link">

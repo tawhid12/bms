@@ -16,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::with(['category','ebrochure'])->paginate(10);
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -42,19 +43,19 @@ class ProductController extends Controller
                 $file = $request->file('featured_image');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/featured_image/'), $fileName);
-                $product->featured_image = $fileName;
+                $product->featured_image = 'uploads/featured_image/'.$fileName;
             }
 
             $product->title = $request->product_title;
             $product->category_id = $request->category_id;
             $product->tech_spec = $request->tech_spec;
-            $product->featured_image = 1;
             $product->product_des = $request->product_des;
-            $product->che_res = $request->product_title;
-            $product->pro_info = $request->product_title;
-            $product->feature = $request->product_title;
-            $product->srbsc = $request->product_title;
+            $product->che_res = $request->che_res;
+            $product->pro_info = $request->pro_info;
+            $product->feature = $request->feature;
+            $product->srbsc = $request->srbsc;
             $product->ebrochure_id = $request->ebrochure_id;
+            $product->is_featured = $request->is_featured;
             //$c->upload_file = $fileName;
             $product->save();
 
@@ -77,7 +78,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -85,7 +86,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        $ebrochure = Ebrochure::all();
+        return view('product.edit', compact('product','categories','ebrochure'));
     }
 
     /**

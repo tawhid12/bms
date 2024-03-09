@@ -8,9 +8,7 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title'
-    ];
+    protected $fillable = ['title'];
     protected static function boot()
     {
         parent::boot();
@@ -22,16 +20,19 @@ class Product extends Model
     private function createSlug($title){
         if (static::whereSlug($slug = Str::slug($title))->exists()) {
             $max = static::whereTitle($title)->latest('id')->skip(1)->value('slug');
-  
             if (is_numeric($max[-1])) {
                 return preg_replace_callback('/(\d+)$/', function ($mathces) {
                     return $mathces[1] + 1;
                 }, $max);
             }
-  
             return "{$slug}-2";
         }
-  
         return $slug;
+    }
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+    public function ebrochure(){
+        return $this->belongsTo(Ebrochure::class);
     }
 }

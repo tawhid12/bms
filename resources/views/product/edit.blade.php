@@ -1,109 +1,169 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update page'))
-@section('pageSubTitle',trans('Update'))
+@section('pageTitle', trans('Edit Product'))
+@section('pageSubTitle', trans('Edit'))
 
 @section('content')
-<style>
-    .ck-editor__editable_inline {
-        min-height: 400px;
-        border:1px solid #AAA !important;
-    }
-    </style>
-  <section id="multiple-column-form">
-      <div class="row match-height">
-          <div class="col-12">
-              <div class="card">
-                  <div class="card-content">
-                      <div class="card-body">
-                          <form class="form" method="post" action="{{route(currentUser().'.page.update',encryptor('encrypt',$page->id))}}">
-                              @csrf
-                              @method('patch')
-                              <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$page->id)}}">
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form" method="post" action="{{ route(currentUser() . '.product.update',$product->id) }}" enctype="multipart/form-data">
+                                @csrf
+                                @method('PATCH')
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="title"><b>{{__('Title')}}<span class="text-danger">*</span></b></label>
+                                        <label for="title"><b>{{ __('Title') }}<span
+                                                    class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" id="title" value="{{ old('title',$page->page_title)}}" class="form-control"
-                                            placeholder="Post title" name="title">
-                                            @if($errors->has('title'))
-                                                <span class="text-danger"> {{ $errors->first('title') }}</span>
-                                            @endif
+                                        <input type="text" id="product_title" value="{{ old('product_title',$product->title) }}"
+                                            class="form-control" placeholder="Product title" name="product_title">
+                                        @if ($errors->has('product_title'))
+                                            <span class="text-danger"> {{ $errors->first('product_title') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="details"><b>{{__('Details')}}:</b></label>
+                                        <label for="title"><b>{{ __('Featured Image') }}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control" name="featured_image">
+                                        @if ($errors->has('featured_image'))
+                                            <span class="text-danger"> {{ $errors->first('featured_image') }}</span>
+                                        @endif
+                                        <img src="{{asset($product->featured_image)}}" class="img-fluid" width="100px" height="80px">
+                                    </div>
+                                    
+                                </div>
+                                 <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="published"><b>{{__('Select Category')}}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-control form-select" value="{{ old('category_id')}}" name="category_id" required>
+                                            <option value="">Select Category</option>
+                                            @forelse ($categories as $cat)
+                                                <option value="{{$cat->id}}" @if($product->category_id == $cat->id) selected @endif>{{$cat->cat_name}}</option>
+                                            @empty
+                                                
+                                            @endforelse
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="details"><b>{{ __('Technical Specification') }}:</b></label>
                                     </div>
                                     <div class="col-12">
                                         <div id="toolbar-container"></div>
-                                        <textarea name="details" id="ckeditordetails" class="d-none">{{ old('details',$page->details)}}</textarea>
-                                        <div class="form-control ck-editor__editable ck-editor__editable_inline" id="ckeditor"  rows="5">{!! old('details',$page->details)!!}</div>
+                                        <textarea class="form-control content" placeholder="Enter the Technical Specification" rows="5" name="tech_spec">{!!$product->tech_spec!!}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="published"><b>{{__('Published')}}<span class="text-danger">*</span></b></label>
+                                        <label for="details"><b>{{ __('Description') }}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <select class="form-control form-select" value="{{ old('published')}}" name="published" required>
-                                            <option value="">Select Published</option>
-                                            <option value="1" {{ old('published',$page->published)=="1"?"selected":""}}>Show</option>
-                                            <option value="0" {{ old('published',$page->published)=="0"?"selected":""}}>Hide</option>
-                                        </select>
+                                        <div id="toolbar-container"></div>
+                                        <textarea class="form-control" id="" placeholder="Enter the Description" rows="5" name="product_des">{!!$product->product_des!!}</textarea>
                                     </div>
                                 </div>
-
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="show"><b>{{__('Show Section')}}<span class="text-danger">*</span></b></label>
+                                        <label for="details"><b>{{ __('Chemical Specification') }}:</b></label>
                                     </div>
                                     <div class="col-12">
-                                        <select class="form-control form-select" value="{{ old('show_section')}}" name="show_section">
-                                            <option value="">Select Show Section</option>
-                                            <option value="1" {{ old('show_section',$page->show_section)=="1"?"selected":""}}>Section One</option>
-                                            <option value="2" {{ old('show_section',$page->show_section)=="2"?"selected":""}}>Section Two</option>
-                                            <option value="3" {{ old('show_section',$page->show_section)=="3"?"selected":""}}>Section Three</option>
-                                            <option value="4" {{ old('show_section',$page->show_section)=="4"?"selected":""}}>Section Four</option>
+                                        <div id="toolbar-container"></div>
+                                        <textarea class="form-control content" placeholder="Enter the Chemical Specification" rows="5" name="che_res">{!!$product->che_res!!}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="details"><b>{{ __('Production Information') }}:</b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="toolbar-container"></div>
+                                        <textarea class="form-control content" placeholder="Enter the Product Information" rows="5" name="pro_info">{!!$product->pro_info!!}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="details"><b>{{ __('Product Feature') }}:</b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="toolbar-container"></div>
+                                        <textarea class="form-control content" placeholder="Enter the Product Feature" rows="5" name="feature">{!!$product->feature!!}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="details"><b>{{ __('Sisal Rope Breaking Strength chart') }}:</b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="toolbar-container"></div>
+                                        <textarea class="form-control content" placeholder="Enter the Sisal Rope Breaking Strength chart" rows="5"
+                                            name="srbsc">{!!$product->srbsc!!}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="published"><b>{{__('Select Brochure')}}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-control form-select" value="{{ old('ebrochure_id')}}" name="ebrochure_id">
+                                            <option value="">Select Brochure</option>
+                                            @forelse ($ebrochure as $e)
+                                                <option value="{{$e->id}}" @if($product->ebrochure_id == $e->id) selected @endif>{{$e->title}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
                                     </div>
                                 </div>
-                                  
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="published"><b>{{__('Is Featured')}}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-control form-select" name="is_featured">
+                                            <option value="">Select Category</option>
+                                            <option value="1" @if($product->is_featured == 1) selected @endif>Yes</option>
+                                            <option value="0" @if($product->is_featured == 0) selected @endif>No</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary me-1 mb-1">{{__('Save')}}</button>
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Update') }}</button>
                                 </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @push('scripts')
-<script src="{{ asset('assets/ckeditor5-build-decoupled-document/ckeditor.js') }}"></script>
-<script>
-    $('#ckeditor').blur(function(){
-        $('#ckeditordetails').val($(this).html());
-    })
-DecoupledEditor .create( document.querySelector( '#ckeditor' ),{
-                ckfinder: {
-                    uploadUrl: '{{route('image.upload').'?_token='.csrf_token()}}',
-                }
-            })
-            .then( editor => {
-                const toolbarContainer = document.querySelector( '#toolbar-container' );
+    {{-- CKEditor CDN --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
-                toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
 
-    
-</script>
+    <script>
+        // Select all textarea elements with the specified class name
+        const textareas = document.querySelectorAll('.content');
 
+        // Loop through each textarea element
+        textareas.forEach(textarea => {
+            // Apply ClassicEditor.create to each textarea
+            ClassicEditor.create(textarea)
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script>
 @endpush
-

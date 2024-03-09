@@ -18,8 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $brands = Category::paginate(10);
-        return view('category.index', compact('brands'));
+        $categories = Category::paginate(10);
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -41,13 +41,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         try {
-            $b = new Category;
-            if ($request->has('Picture'))
-                $b->image = $this->resizeImage($request->Picture, 'uploads/categories', true, 254, 143, true);
-           
-            if ($b->save()) {
-                Toastr::success('Brand Uploaded Successfully!');
-                return redirect()->route(currentUser() . '.brand.index');
+            $c = new Category;
+            $c->cat_name = $request->cat_name;
+            if ($request->has('upload_file'))
+                $c->upload_file = 'uploads/categories/thumb/'.$this->resizeImage($request->upload_file, 'uploads/categories', true, 285, 373, true);
+            if ($c->save()) {
+                Toastr::success('Category Successfully!');
+                return redirect()->route(currentUser() . '.category.index');
             } else {
                 Toastr::warning('Please try Again!');
                 return redirect()->back();
@@ -79,8 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $c=Cateogry::findOrFail(encryptor('decrypt',$id));
-        return view('category.edit',compact('b'));
+        $c=Category::findOrFail(encryptor('decrypt',$id));
+        return view('category.edit',compact('c'));
     }
 
     /**
@@ -93,16 +93,19 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $c=category::findOrFail(encryptor('decrypt',$id));
-
+            $c=Category::findOrFail(encryptor('decrypt',$id));
+            $c->cat_name = $request->cat_name;
             $path='uploads/categories';
             $dpath='uploads/categories/thumb/';
-            if($request->has('Picture') && $request->Picture)
-            if($this->deleteImage($c->image,$dpath))
-                $c->image=$this->resizeImage($request->Picture,$path,true,254,143,true);
+            if($request->has('upload_file') && $request->upload_file){
+                if($this->deleteImage($c->upload_file,$dpath)){
+                    $c->upload_file=$this->resizeImage($request->upload_file,$path,true,285,373,true);
+                }
+                $c->upload_file = 'uploads/categories/thumb/'.$this->resizeImage($request->upload_file, 'uploads/categories', true, 285, 373, true);
+            }
             if($c->save()){
-            Toastr::success('Brand Update Successfully!');
-            return redirect()->route(currentUser().'.brand.index');
+            Toastr::success('Category Updated Successfully!');
+            return redirect()->route(currentUser().'.category.index');
             } else{
              Toastr::warning('Please try Again!');
              return redirect()->back();

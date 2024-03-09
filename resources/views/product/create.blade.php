@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <label for="details"><b>{{ __('Production Feature') }}:</b></label>
+                                        <label for="details"><b>{{ __('Product Feature') }}:</b></label>
                                     </div>
                                     <div class="col-12">
                                         <div id="toolbar-container"></div>
@@ -121,10 +121,17 @@
                                         </select>
                                     </div>
                                 </div>
-                               
-
-
-
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="published"><b>{{__('Is Featured')}}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-control form-select" name="is_featured">
+                                            <option value="">Select Category</option>
+                                            <option value="1">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
                                 </div>

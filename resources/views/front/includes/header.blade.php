@@ -287,7 +287,7 @@
                                 <a class="dropdown-item" href="{{ route('allbrochure') }}">All</a>
                                 @foreach (\App\Models\Ebrochure::all() as $ebrochure)
                                     <a class="dropdown-item"
-                                        href="{{ route('companyprofile') }}">{{ $ebrochure->slug }}</a>
+                                        href="{{ asset($ebrochure->upload_pdf) }}">{{ $ebrochure->slug }}</a>
                                 @endforeach
                             </div>
                         </li>
