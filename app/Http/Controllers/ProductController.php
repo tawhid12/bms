@@ -60,6 +60,7 @@ class ProductController extends Controller
             $product->save();
 
             if ($product->save()) {
+                
                 Toastr::success('Submitted Successfully!');
                 return redirect()->back();
             } else {

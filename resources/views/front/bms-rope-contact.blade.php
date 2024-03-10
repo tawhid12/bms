@@ -24,9 +24,7 @@
 
                 <!--start form code-->
                 <div class="col-md-6 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSe9KMkjw-hnLLufSzIIge3WAcqNhhaGtaTjqwWBibRCE22P2Q/viewform?embedded=true"
-                        width="550" height="600" frameborder="2px" marginheight="0" marginwidth="0">Loading...</iframe>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeRr1C1VVyorkqTaZjAkB5VQDKiyzH7eFR3iMwhMrs6MWlSqw/viewform?embedded=true" width="550" height="600" frameborder="2px" marginheight="0" marginwidth="0">Loading…</iframe>
 
                     <!--form name="contactform" method="POST" action="send_form_email.php">
                         <div><h2>Feel Free to ask any question/ query</h2>
