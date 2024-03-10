@@ -8,6 +8,7 @@
         .mission li{
             margin-bottom: 10px;
             list-style-type: disc;
+            margin-right: 10px;
         }
     </style>
 @endpush
