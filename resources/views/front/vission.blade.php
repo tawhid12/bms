@@ -5,6 +5,10 @@
 @section('pageSubTitle', ' Career')
 @push('styles')
     <style>
+         .vission li{
+            margin-bottom: 10px;            
+            margin-right: 10px;
+        }
     </style>
 @endpush
 @section('content')
@@ -29,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
                     <h2>Our Vission</h2>
-                    <ul>
+                    <ul class="vission">
                         <li>
                             <strong>Market Expansion : </strong> Expand our presence in both domestic and international
                             markets,
