@@ -5,7 +5,7 @@
 @section('pageSubTitle', ' Career')
 @push('styles')
     <style>
-        ul li{
+        .mission li{
             margin-bottom: 10px;
             list-style-type: disc;
         }
@@ -34,7 +34,7 @@
 
                 <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
                     <h2>Our Mission</h2>
-                    <ul>
+                    <ul class="mission">
                         <li>
                             Deliver High-Quality Products: Our mission is to consistently deliver high-quality ropes,
                             twines, and hessian cloth products that meet or exceed industry standards and
