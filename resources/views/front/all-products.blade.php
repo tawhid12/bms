@@ -60,6 +60,7 @@
                                     @endforelse
                                 </div>
                             @empty
+                            <h4>No Product Found</h4>
                             @endforelse
                             {{-- <div class="col-12 col-md-3 filtr-item" data-category="1" data-sort="value"
                                 style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
