@@ -26,7 +26,7 @@
         </div>
     </section> --}}
 
-    <section class="all_part mt-5">
+    <section class="all_part mt-5 py-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">

@@ -5,6 +5,10 @@
 @section('pageSubTitle', ' Career')
 @push('styles')
     <style>
+        ul li{
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
     </style>
 @endpush
 @section('content')
