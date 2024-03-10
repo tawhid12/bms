@@ -39,7 +39,7 @@
 
                 <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
                     <h2>Background</h2>
-                    <p style="line-height: 1.5">Marusan Sangyo Company Limited is the mother company of BMS and BMS Rope which is located in Tochigi
+                    <p style="line-height: 1.5; text-align:justify;">Marusan Sangyo Company Limited is the mother company of BMS and BMS Rope which is located in Tochigi
                         City,
                         Japan. BMS and BMS Rope are leading manufacturers and exporters of high-quality rope, twine and
                         hessian
