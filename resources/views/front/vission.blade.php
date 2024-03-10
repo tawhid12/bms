@@ -76,11 +76,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
-                    <div class="about-content about-bottom-content" id="name-list">
-                        <h2>Our Concerns</h2>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
