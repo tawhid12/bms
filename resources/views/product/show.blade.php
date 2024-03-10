@@ -14,6 +14,10 @@
                             <h4>{{$product->title}}</h4>
                             <img src="{{asset($product->featured_image)}}" class="img=fluid">
                             <div class="row">
+                                <div class="col-md-12 my-2">
+                                    <strong>Product Description</strong>
+                                    <p style="text-align: justify;line-heigt:1.5">{!!$product->product_des!!}</p>
+                                </div>
                                 <div class="col-md-4">
                                     <h6>Technical Specification</h6>
                                     {!!$product->tech_spec!!}
@@ -30,9 +34,14 @@
                                     <h6>Technical Specification</h6>
                                     {!!$product->srbsc!!}
                                 </div>
+                                <div class="col-md-12">
+                                    <h6>Image Gallery</h6>
+                                </div>
+                                @if ($product->ebrochure)
                                 <div class="col-md-2">
                                     <a class="btn btn-secondary d-inline" href="{{asset($product->ebrochure->upload_pdf)}}">View PDF</a>
-                                </div>
+                                </div>   
+                                @endif
                             </div>
                         </div>
                     </div>

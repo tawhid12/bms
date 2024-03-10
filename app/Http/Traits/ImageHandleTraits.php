@@ -4,7 +4,7 @@ namespace App\Http\Traits;
 
 use Storage;
 use File;
-use Image;
+use Intervention\Image\Facades\Image;
 
 trait ImageHandleTraits{
 
