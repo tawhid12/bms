@@ -42,7 +42,7 @@
             <div class="container-product-full">
                 <div class="row">
 
-                    <div class="col-md-3 wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
+                    {{-- <div class="col-md-3 wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
                         <div class="left-sidebar">
                             <div class="container">
 
@@ -67,9 +67,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="col-md-9 specification wow slideInRight"
+                    <div class="col-md-12 specification wow slideInRight"
                         style="visibility: visible; animation-name: slideInRight;">
                         <h2>{{$product->title}}</h2>
 
