@@ -35,7 +35,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-       
+        // dd($request);
+        try {
             $product = new Product;
 
             if ($request->file('featured_image')->isValid()) {
@@ -45,18 +46,32 @@ class ProductController extends Controller
                 $product->featured_image = 'uploads/featured_image/'.$fileName;
             }
 
-            $product->title = $request->product_title;
+            $product->title = $request->product_title?$request->product_title:' ';
             $product->category_id = $request->category_id;
-            $product->tech_spec = $request->tech_spec;
-            $product->product_des = $request->product_des;
-            $product->che_res = $request->che_res;
-            $product->pro_info = $request->pro_info;
-            $product->feature = $request->feature;
-            $product->srbsc = $request->srbsc;
+            $product->tech_spec = $request->tech_spec?$request->tech_spec:' ';
+            $product->product_des = $request->product_des?$request->product_des:' ';
+            $product->che_res = $request->che_res?$request->che_res:' ';
+            $product->pro_info = $request->pro_info?$request->pro_info:' ';
+            $product->feature = $request->feature?$request->feature:' ';
+            $product->srbsc = $request->srbsc?$request->srbsc:' ';
             $product->ebrochure_id = $request->ebrochure_id;
             $product->is_featured = $request->is_featured;
             //$c->upload_file = $fileName;
-            $product->save();
+
+
+            if ($product->save()) {
+                
+                Toastr::success('Submitted Successfully!');
+                return redirect()->back();
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**
