@@ -1,6 +1,6 @@
 @extends('layout.app')
-@section('pageTitle',trans('Add Photo to Album'))
-@section('pageSubTitle',trans('Add Photo'))
+@section('pageTitle',trans('Upload Image to Product'))
+@section('pageSubTitle',trans('Upload Photo'))
 @push("styles")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css">
 <style>
@@ -32,7 +32,7 @@
               <div class="card">
                   <div class="card-content">
                       <div class="card-body">
-                        <a href="{{route(currentUser().'.pGalleryCat.index')}}" class="float-end btn btn-danger btn-sm">Back to Album</a>
+                        <a href="{{route(currentUser().'.product.index')}}" class="float-end btn btn-danger btn-sm">Back to Product</a>
                         <label for="image"><b>{{__('Gallery Photo')}}</b></label>
                         <form action="{{route(currentUser().'.product_photo_upload')}}" method="post" enctype="multipart/form-data" id="image-upload" class="mt-3 dropzone">
                             @csrf
