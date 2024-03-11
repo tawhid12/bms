@@ -84,7 +84,7 @@
                                     <h3>Chemical Resistance</h3>
                                     {!! html_entity_decode($product->che_res) !!}
                                     <h3>Production information</h3>
-                                    {!! html_entity_decode($product->product_des) !!}
+                                    {!! html_entity_decode($product->pro_info) !!}
                                     <h3>Feature</h3>
                                     {!! html_entity_decode($product->product_des) !!}
                                     <button class="btn btn-sm btn-secondary d-block my-2"><i class="px-2 fa fa-file-pdf-o"
