@@ -32,7 +32,7 @@
                 </div>
                 @forelse($ebrochures as $e)
                     <div class="col-12 col-md-3">
-                        <img src="{{ asset('frontend/images/products/braid-rop/1.jpg') }}" class="img-fluid">
+                        <img src="{{ asset($e->image) }}" class="img-fluid">
                         <h3><a href="{{ asset($e->upload_pdf) ?? '' }}">{{ $e->title }}<i
                                     class="fa fa-share-square-o"></i></a></h3>
                     </div>
