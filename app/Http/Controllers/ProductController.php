@@ -35,8 +35,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        try {
+       
             $product = new Product;
 
             if ($request->file('featured_image')->isValid()) {
@@ -58,20 +57,6 @@ class ProductController extends Controller
             $product->is_featured = $request->is_featured;
             //$c->upload_file = $fileName;
             $product->save();
-
-            if ($product->save()) {
-                
-                Toastr::success('Submitted Successfully!');
-                return redirect()->back();
-            } else {
-                Toastr::warning('Please try Again!');
-                return redirect()->back();
-            }
-        } catch (Exception $e) {
-            Toastr::warning('Please try Again!');
-            // dd($e);
-            return back()->withInput();
-        }
     }
 
     /**
