@@ -30,7 +30,7 @@
                                     <td class="white-space-nowrap">
                                         <a class="btn btn-sm btn-primary" href="{{route(currentUser().'.product.show',$p)}}">Show</a>
                                         <a class="btn btn-sm btn-success" href="{{route(currentUser().'.product.edit',$p)}}">Edit</a>
-                                        <a class="" href="{{route(currentUser().'.pGallery.show',encryptor('encrypt',$p->id))}}"><i class="bi bi-upload"></i></a>
+                                        <a class="" href="{{route(currentUser().'.product_photo_show',encryptor('encrypt',$p->id))}}"><i class="bi bi-upload"></i></a>
                                     </td>
                                 </tr>
                                 @empty

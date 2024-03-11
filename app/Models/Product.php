@@ -35,4 +35,5 @@ class Product extends Model
     public function ebrochure(){
         return $this->belongsTo(Ebrochure::class);
     }
+    
 }

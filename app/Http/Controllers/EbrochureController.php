@@ -44,7 +44,7 @@ class EbrochureController extends Controller
                 $ebrochure->upload_pdf = "uploads/upload_pdf/".$fileName;
             }
             if ($ebrochure->save()) {
-                Toastr::success('Slider Create Successfully!');
+                Toastr::success('Brochure Create Successfully!');
                 return redirect()->route(currentUser() . '.ebrochure.index');
             } else {
                 Toastr::warning('Please try Again!');

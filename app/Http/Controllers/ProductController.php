@@ -39,11 +39,18 @@ class ProductController extends Controller
         try {
             $product = new Product;
 
-            if ($request->file('featured_image')->isValid()) {
+            if ($request->hasFile('featured_image') && $request->file('featured_image')->isValid()) {
                 $file = $request->file('featured_image');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/featured_image/'), $fileName);
                 $product->featured_image = 'uploads/featured_image/'.$fileName;
+            }
+
+            if ($request->hasFile('featured_image_two') && $request->file('featured_image_two')->isValid()) {
+                $file = $request->file('featured_image_two');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/featured_image_two/'), $fileName);
+                $product->featured_image_two = 'uploads/featured_image_two/'.$fileName;
             }
 
             $product->title = $request->product_title?$request->product_title:' ';
@@ -60,9 +67,8 @@ class ProductController extends Controller
 
 
             if ($product->save()) {
-                
                 Toastr::success('Submitted Successfully!');
-                return redirect()->back();
+                return redirect()->route(currentUser() . '.product.index');
             } else {
                 Toastr::warning('Please try Again!');
                 return redirect()->back();
@@ -95,9 +101,51 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request,$id)
     {
-        //
+         // dd($request);
+         try {
+            $product = Product::findOrFail($id);
+
+            if ($request->hasFile('featured_image') && $request->file('featured_image')->isValid()) {
+                $file = $request->file('featured_image');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/featured_image/'), $fileName);
+                $product->featured_image = 'uploads/featured_image/'.$fileName;
+            }
+
+            if ($request->hasFile('featured_image_two') && $request->file('featured_image_two')->isValid()) {
+                $file = $request->file('featured_image_two');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/featured_image_two/'), $fileName);
+                $product->featured_image_two = 'uploads/featured_image_two/'.$fileName;
+            }
+
+            $product->title = $request->product_title?$request->product_title:' ';
+            $product->category_id = $request->category_id;
+            $product->tech_spec = $request->tech_spec?$request->tech_spec:' ';
+            $product->product_des = $request->product_des?$request->product_des:' ';
+            $product->che_res = $request->che_res?$request->che_res:' ';
+            $product->pro_info = $request->pro_info?$request->pro_info:' ';
+            $product->feature = $request->feature?$request->feature:' ';
+            $product->srbsc = $request->srbsc?$request->srbsc:' ';
+            $product->ebrochure_id = $request->ebrochure_id;
+            $product->is_featured = $request->is_featured;
+            //$c->upload_file = $fileName;
+
+
+            if ($product->save()) {
+                Toastr::success('Submitted Successfully!');
+                return redirect()->route(currentUser() . '.product.index');
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**

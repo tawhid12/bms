@@ -40,6 +40,18 @@
                                     </div>
                                     
                                 </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="title"><b>{{ __('Featured Image Two') }}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control" name="featured_image_two">
+                                        @if ($errors->has('featured_image_two'))
+                                            <span class="text-danger"> {{ $errors->first('featured_image_two') }}</span>
+                                        @endif
+                                        <img src="{{asset($product->featured_image_two)}}" class="img-fluid" width="100px" height="80px">
+                                    </div>
+                                </div>
                                  <div class="row mb-3">
                                     <div class="col-12">
                                         <label for="published"><b>{{__('Select Category')}}<span class="text-danger">*</span></b></label>

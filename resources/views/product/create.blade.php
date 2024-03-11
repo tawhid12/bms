@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="col-12">
                                         <input type="text" id="product_title" value="{{ old('product_title') }}"
-                                            class="form-control" placeholder="Product title" name="product_title">
+                                            class="form-control" placeholder="Product title" name="product_title" required>
                                         @if ($errors->has('product_title'))
                                             <span class="text-danger"> {{ $errors->first('product_title') }}</span>
                                         @endif
@@ -31,9 +31,20 @@
                                         <label for="title"><b>{{ __('Featured Image') }}<span class="text-danger">*</span></b></label>
                                     </div>
                                     <div class="col-12">
-                                        <input type="file" class="form-control" name="featured_image">
+                                        <input type="file" class="form-control" name="featured_image" required>
                                         @if ($errors->has('featured_image'))
                                             <span class="text-danger"> {{ $errors->first('featured_image') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <label for="title"><b>{{ __('Featured Image Two') }}<span class="text-danger">*</span></b></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control" name="featured_image_two" required>
+                                        @if ($errors->has('featured_image_two'))
+                                            <span class="text-danger"> {{ $errors->first('featured_image_two') }}</span>
                                         @endif
                                     </div>
                                 </div>

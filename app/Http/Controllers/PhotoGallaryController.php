@@ -8,6 +8,7 @@ use App\Models\photoGallaryCategory;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\ProductImage;
 use Illuminate\Support\Facades\Storage;
 use Exception;
 
@@ -130,5 +131,27 @@ class PhotoGallaryController extends Controller
     public function destroy($id)
     {
         
+    }
+    public function product_photo_show($id)
+    {
+        $pGalleryCat= encryptor('decrypt',$id);
+        return view('pGallery.product-photo',compact('pGalleryCat'));
+    }
+    public function product_photo_upload(Request $request)
+    {
+        $image = $request->file('file');
+        $fileInfo = $image->getClientOriginalName();
+        $filename = pathinfo($fileInfo, PATHINFO_FILENAME);
+        $extension = pathinfo($fileInfo, PATHINFO_EXTENSION);
+        $file_name = $filename . '-' . time() . '.' . $extension;
+        $image->move(public_path('uploads/product_images'), $file_name);
+
+
+
+        $imageUpload = new ProductImage;
+        $imageUpload->product_id = $request->product_id;
+        $imageUpload->image = 'uploads/product_images/'.$file_name;
+        $imageUpload->save();
+        return response()->json(['success' => $file_name]);
     }
 }

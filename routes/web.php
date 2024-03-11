@@ -120,6 +120,10 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('pGallery',pGallery::class,['as'=>'superadmin']);
         Route::get('pGallerydelete', [pGallery::class, 'delete'])->name('superadmin.image.delete'); 
 
+        /*==Product Photo Upload */
+        Route::get('product/photo/{id}',[pGallery::class,'product_photo_show'])->name('superadmin.product_photo_show');
+        Route::post('product/photo/upload',[pGallery::class,'product_photo_upload'])->name('superadmin.product_photo_upload');
+
         Route::resource('vgallery',vGallery::class,['as'=>'superadmin']);
         Route::resource('vgalleryCat',vGalleryCat::class,['as'=>'superadmin']);
         Route::resource('scrollN',scrollN::class,['as'=>'superadmin']);
