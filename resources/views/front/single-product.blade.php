@@ -105,7 +105,7 @@
                                         <div class="col-sm-12">
                                             <div class="row">
                                                 <div id="images">
-                                                    @forelse ($product->product_images as $p)
+                                                    @forelse ($product_images as $p)
                                                     <div class="item">
                                                         <a href=""><img
                                                                 src="{{ asset($p->image) }}"></a>
