@@ -99,7 +99,9 @@
                                     <h3>Technical Specification</h3>
                                     {!! html_entity_decode($product->tech_spec) !!}
                                 </div>
+                                @if (count($product_images) > 0)
                                 <h3>Product Photos</h3>
+                                @endif
                                 <div class="row">
                                     @if (count($product_images) > 0)
                                     <div class="gallary">

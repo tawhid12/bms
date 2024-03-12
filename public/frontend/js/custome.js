@@ -111,10 +111,10 @@ $('.flag-slider').slick({
 //lightbox
 $(document).ready(function(){
 
-	 $('a').nivoLightbox({
+	/* $('a').nivoLightbox({
 		 effect: 'fade',
 		 keyboardNav: false,
-	 });
+	 });*/
 
 });
 
