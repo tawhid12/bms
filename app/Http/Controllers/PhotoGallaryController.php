@@ -11,7 +11,7 @@ use App\Http\Traits\ImageHandleTraits;
 use App\Models\ProductImage;
 use Illuminate\Support\Facades\Storage;
 use Exception;
-
+use DB;
 class PhotoGallaryController extends Controller
 {
     use ImageHandleTraits;
