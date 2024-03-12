@@ -92,7 +92,7 @@ class FrontendController extends Controller
         return view('front.all-products',compact('categories'));
     }
     public function singleproduct($slug){
-        $product = Product::where('slug',$slug)->first();
+        $product = Product::with('product_images')->where('slug',$slug)->first();
         //print_r($subcategory);
         return view('front.single-product',compact('product'));
     }
