@@ -330,24 +330,25 @@
                 </div>
             </div>
             <div class="row">
+                @forelse ($rope_products as $product)
                 <div class="col-sm-6 wow slideInLeft" style="visibility: hidden; animation-name: none;">
                     <div class="about-image-dl">
                         <a href="single-product.html">
-                            <img src="{{ asset('frontend/images/product/rope-feature.jpg') }}" alt="">
+                            <img src="{{ asset($product->featured_image) }}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>Nylon Rope</h2>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa excepturi voluptates voluptas
-                            maiores
-                            nostrum? Voluptates modi magnam reiciendis! Deserunt consequuntur laboriosam, dolores velit
-                            inventore qui
-                            quisquam unde amet totam ipsam.</p>
-                        <div><a href="single-product.html" class="pro-btn ">View details</a></div>
+                        <h2>{{$product->title}}</h2>
+                        <p>{{$product->product_des}}</p>
+                        <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>
                 </div>
+                @empty
+                    
+                @endforelse
+
             </div>
 
             <div class="row">
