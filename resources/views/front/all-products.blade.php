@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="w-100">
-                    <div class="filtr-container" style="padding: 0px; position: relative;">
+                    <div class="filtr-container mt-3" style="padding: 0px; position: relative;">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
@@ -38,10 +38,8 @@
                                     <h4>{{ $product->title }}</h4>
                                 </div>
                             @empty
-                                <h4>No Product Found</h4>
                             @endforelse
                         @empty
-                            <h4>No Product Found</h4>
                         @endforelse
                     </div>
                 </div>
