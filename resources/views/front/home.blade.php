@@ -333,8 +333,8 @@
                 @forelse ($rope_products as $product)
                 <div class="col-sm-6 wow slideInLeft" style="visibility: hidden; animation-name: none;">
                     <div class="about-image-dl">
-                        <a href="single-product.html">
-                            <img src="{{ asset($product->featured_image) }}" alt="">
+                        <a href="{{route('singleproduct',$product->slug)}}">
+                            <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid">
                         </a>
                     </div>
                 </div>
