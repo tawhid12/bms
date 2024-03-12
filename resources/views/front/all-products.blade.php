@@ -40,9 +40,9 @@
                 </div>
                 <div class="w-100">
                     <div class="filtr-container" style="padding: 0px; position: relative; height: 912px;">
-                        <div class="text-center">
+                        <div class="row text-center">
                             @forelse ($categories as $key => $category)
-                                <div class="col-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
+                                <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
                                     style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
                                     @forelse($category->products as $product)
                                         <div class="latest-slider-img">
