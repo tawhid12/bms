@@ -5,6 +5,23 @@
 @section('pageSubTitle', ' Career')
 @push('styles')
     <style>
+        .filtr-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filtr-item {
+    width: calc(25% - 20px); /* Adjust the width as per your requirement */
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .filtr-item {
+        width: calc(50% - 20px);
+    }
+}
+
     </style>
 @endpush
 @section('content')
@@ -27,7 +44,7 @@
 
     <section class="all_part" style="margin-top: 60px">
         <div class="container product">
-            <div class="row ">
+            <div class="row">
                 <div class="col-md-12 ">
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
@@ -40,7 +57,7 @@
                 </div>
                 <div class="w-100">
                     <div class="filtr-container" style="padding: 0px; position: relative; height: 912px;">
-                        <div class="row text-center">
+                        <div class="text-center">
                             @forelse ($categories as $key => $category)
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
                                     style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
