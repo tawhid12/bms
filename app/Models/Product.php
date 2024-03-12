@@ -36,6 +36,6 @@ class Product extends Model
         return $this->belongsTo(Ebrochure::class);
     }
     public function product_images(){
-        return $this->belongsToMany(ProductImage::class);
+        return $this->belongsToMany(ProductImage::class,'product_id','id');
     }
 }
