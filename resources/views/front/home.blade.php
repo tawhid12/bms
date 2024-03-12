@@ -308,7 +308,7 @@
                 @endforelse
             </div>
             <div class="row d-flex justify-content-center">
-                <a href="" class="pro-btn d-flex justify-content-center">View all products</a>
+                <a href="{{route('allproducts')}}" class="pro-btn d-flex justify-content-center">View all products</a>
             </div>
         </div>
     </section>
