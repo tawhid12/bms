@@ -76,7 +76,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="specification-img ">
-                                    <a href=""><img src="{{ asset('frontend/images/product/rope-feature.jpg') }}"
+                                    <a href=""><img src="{{ asset($product->featured_image) }}"
                                             alt=""></a>
                                 </div>
                                 <p>{!! html_entity_decode($product->product_des) !!}</p>
@@ -101,6 +101,7 @@
                                 </div>
                                 <h3>Product Photos</h3>
                                 <div class="row">
+                                    @if (count($product_images) > 0)
                                     <div class="gallary">
                                         <div class="col-sm-12">
                                             <div class="row">
@@ -111,16 +112,12 @@
                                                                 src="{{ asset($p->image) }}"></a>
                                                     </div>
                                                     @empty
-                                                        <h4>No Image found</h4>
                                                     @endforelse
                                                 </div>
                                             </div>
-
-
-
                                         </div>
-
                                     </div>
+                                    @endif
                                     <h3>Sisal Rope Breaking Strength chart</h3>
                                     {!! html_entity_decode($product->srbsc) !!}
                                 </div>
