@@ -45,7 +45,7 @@
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
                                     style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
                                     @forelse($category->products as $product)
-                                        <div class="latest-slider-img">
+                                        <div class="latest-slider-img w-100">
                                             <img src="{{ asset('frontend/images/products/braid-rop/1.jpg') }}"
                                                 alt="" class="img-fluid w-100 h-100 img-1">
                                             <img src="{{ asset('frontend/images/products/braid-rop/2.jpg') }}"
