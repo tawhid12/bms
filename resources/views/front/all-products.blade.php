@@ -28,8 +28,8 @@
                             @forelse($category->products as $product)
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
                                     <div class="latest-slider-img">
-                                        <img src="{{ asset('frontend/images/products/braid-rop/1.jpg') }}" alt="" class="img-fluid w-100 h-100 img-1">
-                                        <img src="{{ asset('frontend/images/products/braid-rop/2.jpg') }}" alt="" class="img-fluid w-100 h-100 img-2">
+                                        <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
+                                        <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
                                         <div class="ovr-top text-center">
                                             <h3>{{ $product->title }}</h3>
                                             <a href="{{route('singleproduct',$product->slug)}}">Product details<i class="fa fa-share-square-o"></i></a>
