@@ -38,12 +38,12 @@
                         @endforelse
                     </ul>
                 </div>
-                <div class="w-100 mt-3">
-                    <div class="text-center">
+                <div class="w-100">
                     <div class="filtr-container" style="padding: 0px; position: relative; height: 912px;">
-                        
+                        <div class="text-center d-flex">
                             @forelse ($categories as $key => $category)
-                                <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value"
+                                <div class="col-12 col-md-3 filtr-item" data-category="{{ $category->id }}"
+                                    data-sort="value"
                                     style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
                                     @forelse($category->products as $product)
                                         <div class="latest-slider-img">
@@ -53,17 +53,19 @@
                                                 alt="" class="img-fluid w-100 h-100 img-2">
                                             <div class="ovr-top text-center">
                                                 <h3>{{ $product->title }}</h3>
-                                                <a href="{{route('singleproduct',$product->slug)}}">Product details<i class="fa fa-share-square-o"></i></a>
+                                                <a href="{{ route('singleproduct', $product->slug) }}">Product details<i
+                                                        class="fa fa-share-square-o"></i></a>
                                             </div>
                                         </div>
                                         <h4>{{ $product->title }}</h4>
                                     @empty
                                     @endforelse
+
+                                @empty
+                                    <h4>No Product Found</h4>
                                 </div>
-                            @empty
-                            <h4>No Product Found</h4>
                             @endforelse
-                            <div class="col-12 col-md-3 filtr-item" data-category="1" data-sort="value"
+                            {{-- <div class="col-12 col-md-3 filtr-item" data-category="1" data-sort="value"
                                 style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
                                 <div class="latest-slider-img">
                                     <img src="{{ asset('frontend/images/products/braid-rop/1.jpg') }}" alt=""
@@ -92,7 +94,7 @@
                                     </div>
                                 </div>
                                 <h4>PP Twine</h4>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
