@@ -291,26 +291,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 wow slideInLeft" style="visibility: hidden; animation-name: none;">
-                    <a href=""><img src="{{ asset('frontend/images/product/p1.jpg') }}" alt="rope"
-                            class="img-thumbnail h-100"></a>
-                    <h4>Rope</h4>
-                </div>
+                @forelse ($all_categories as $cat)
                 <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
-                    <a href=""><img src="https://placehold.co/306x410" alt=""
-                            class="img-thumbnail h-100"></a>
-                    <h4>Twin</h4>
+                    <a href="">
+                        @if ($cat->upload_file)
+                        <img src="{{asset($cat->upload_file)}}" alt=""
+                            class="img-thumbnail h-100">
+                        @else
+                        <img src="https://placehold.co/306x410" alt=""
+                            class="img-thumbnail h-100">
+                        @endif
+                        </a>
+                    <h4>{{$cat->cat_name}}</h4>
                 </div>
-                <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
-                    <a href=""><img src="https://placehold.co/306x410" alt=""
-                            class="img-thumbnail h-100"></a>
-                    <h4>Hessian</h4>
-                </div>
-                <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
-                    <a href=""><img src="https://placehold.co/306x410" alt=""
-                            class="img-thumbnail h-100"></a>
-                    <h4>Hessian</h4>
-                </div>
+                @empty
+                @endforelse
             </div>
             <div class="row d-flex justify-content-center">
                 <a href="" class="pro-btn d-flex justify-content-center">View all products</a>

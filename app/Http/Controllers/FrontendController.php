@@ -51,8 +51,9 @@ class FrontendController extends Controller
                         })->latest()->limit(12)->get();*/
         $rope_products = Product::where('category_id',1)->where('is_featured',1)->limit(2)->get();
         $twin_products = Product::where('category_id',2)->where('is_featured',1)->limit(2)->get();   
-        $hessian_products = Product::where('category_id',3)->where('is_featured',1)->limit(2)->get();                  
-        return view('front.home',compact('slider','scroll_notice','rope_products','twin_products','hessian_products'));
+        $hessian_products = Product::where('category_id',3)->where('is_featured',1)->limit(2)->get();
+        $all_categories = Category::all();                  
+        return view('front.home',compact('slider','scroll_notice','rope_products','twin_products','hessian_products','all_categories'));
     }
 
     /**
