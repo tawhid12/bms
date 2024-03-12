@@ -38,7 +38,7 @@
                         @endforelse
                     </ul>
                 </div>
-                <div class="w-100">
+                <div class="mt-5">
                     <div class="filtr-container" style="padding: 0px; position: relative; height: 912px;">
                         <div class="text-center">
                             @forelse ($categories as $key => $category)

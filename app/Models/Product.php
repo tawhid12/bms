@@ -35,5 +35,7 @@ class Product extends Model
     public function ebrochure(){
         return $this->belongsTo(Ebrochure::class);
     }
-    
+    public function product_images(){
+        return $this->belongsToMany(ProductImage::class);
+    }
 }
