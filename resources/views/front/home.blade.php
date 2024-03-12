@@ -360,26 +360,24 @@
                 </div>
             </div>
             <div class="row">
+                @forelse ($twin_products as $product)
                 <div class="col-sm-6 wow slideInLeft" style="visibility: hidden; animation-name: none;">
                     <div class="about-image-dl">
-                        <a href="images/nylon-polyester-gill-net2.jpg">
-                            <img src="{{ asset('frontend/images/product/jute-twin.jpg') }}" alt="Multifilament gill net">
+                        <a href="{{route('singleproduct',$product->slug)}}">
+                            <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>Jute Twin</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa excepturi voluptates voluptas
-                            maiores
-                            nostrum? Voluptates modi magnam reiciendis! Deserunt consequuntur laboriosam, dolores velit
-                            inventore qui
-                            quisquam unde amet totam ipsam.
-                        </p>
-                        <div><a href="single-product.html" class="pro-btn ">View details</a></div>
+                        <h2>{{$product->title}}</h2>
+                        <p>{{$product->product_des}}</p>
+                        <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>
                 </div>
+                @empty
+                    
+                @endforelse
             </div>
             <div class="row">
                 <div class="cover-title">
@@ -390,29 +388,24 @@
                 </div>
             </div>
             <div class="row">
+                @forelse ($hessian_products as $product)
                 <div class="col-sm-6 wow slideInLeft" style="visibility: hidden; animation-name: none;">
                     <div class="about-image-dl">
-                        <a href="images/nylon-polyester-gill-net2.jpg">
-                            <img src="{{ asset('frontend/images/product/hesian-cloth.jpg') }}"
-                                alt="Multifilament gill net">
+                        <a href="{{route('singleproduct',$product->slug)}}">
+                            <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>Hessian Cloth</h2>
-                        <p>Hessian cloth, made from coarse jute fibers, is a versatile material known for its natural
-                            tan color and
-                            rustic texture. Widely used in packaging, construction, crafts, and agriculture, hessian is
-                            appreciated
-                            for its breathability and biodegradability. Its applications range from sturdy packaging to
-                            decorative DIY
-                            projects and temporary construction solutions. Hessian cloth's distinctive characteristics
-                            make it a
-                            popular choice in various industries for both practical and aesthetic purposes.</p>
-                        <div><a href="" class="pro-btn ">View details</a></div>
+                        <h2>{{$product->title}}</h2>
+                        <p>{{$product->product_des}}</p>
+                        <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>
                 </div>
+                @empty
+                    
+                @endforelse
 
             </div>
         </div>
