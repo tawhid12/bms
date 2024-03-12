@@ -92,9 +92,10 @@ class FrontendController extends Controller
         return view('front.all-products',compact('categories'));
     }
     public function singleproduct($slug){
-        $product = Product::with('product_images')->where('slug',$slug)->first();
+        $product = Product::where('slug',$slug)->first();
+        $product_images = DB::table('product_images')->where('product_id', $product->id)->get();
         //print_r($subcategory);
-        return view('front.single-product',compact('product'));
+        return view('front.single-product',compact('product','product_images'));
     }
 
     public function companyprofile(){
