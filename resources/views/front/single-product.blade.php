@@ -105,35 +105,14 @@
                                         <div class="col-sm-12">
                                             <div class="row">
                                                 <div id="images">
+                                                    @forelse ($product->product_images as $p)
                                                     <div class="item">
                                                         <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/1.jpg') }}"></a>
+                                                                src="{{ asset($p->image) }}"></a>
                                                     </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/2.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/3.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/4.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/5.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/6.jpg') }}"></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href=""><img
-                                                                src="{{ asset('frontend/images/product/polyster-rope/7.jpg') }}"></a>
-                                                    </div>
-
+                                                    @empty
+                                                        <h4>No Image found</h4>
+                                                    @endforelse
                                                 </div>
                                             </div>
 
