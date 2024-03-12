@@ -134,7 +134,7 @@ class PhotoGallaryController extends Controller
     }
     public function product_photo_show($id)
     {
-        $pGalleryCat= encryptor('decrypt',$id);
+        $pGalleryCat = DB::table('product_images')->where('product_id', encryptor('decrypt', $id))->get();
         return view('pGallery.product-photo',compact('pGalleryCat'));
     }
     public function product_photo_upload(Request $request)
