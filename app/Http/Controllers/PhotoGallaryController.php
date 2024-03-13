@@ -133,7 +133,8 @@ class PhotoGallaryController extends Controller
     }
     public function productGallery(Request $request)
     {
-        $images = DB::table('product_images')->where('product_id', encryptor('decrypt', $request->id))->get()->toArray();
+        $images = DB::table('product_images')->where('product_id', $request->id)->get()->toArray();
+        dd($images);
         foreach($images as $image){
             $tableImages[] = $image['image'];
         }
