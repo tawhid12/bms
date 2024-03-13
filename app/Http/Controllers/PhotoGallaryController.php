@@ -135,18 +135,18 @@ class PhotoGallaryController extends Controller
     {
         $images = DB::table('product_images')->where('product_id', encryptor('decrypt', $request->id))->get()->toArray();
         foreach($images as $image){
-            $tableImages[] = $image['feature_image'];
+            $tableImages[] = $image['image'];
         }
         $data=array();
-        $storeFolder = public_path('uploads/pGgallery');
-        $file_path = public_path('uploads/pGgallery/');
+        $storeFolder = public_path('uploads/product_images');
+        $file_path = public_path('uploads/product_images/');
         $files = scandir($storeFolder);
         foreach ( $files as $file ) {
             if ($file !='.' && $file !='..' && in_array($file,$tableImages)) {       
                 $obj['name'] = $file;
-                $file_path = public_path('uploads/pGgallery/').$file;
+                $file_path = public_path('uploads/product_images/').$file;
                 $obj['size'] = filesize($file_path);          
-                $obj['path'] = url('public/uploads/pGgallery/'.$file);
+                $obj['path'] = url('public/uploads/product_images/'.$file);
                 $data[] = $obj;
             }
         }
