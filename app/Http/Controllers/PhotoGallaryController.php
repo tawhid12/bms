@@ -23,7 +23,6 @@ class PhotoGallaryController extends Controller
     public function index(Request $request)
     {
         $images = photoGallary::where('photo_gallary_category_id',$request->gid)->get()->toArray();
-        dd($images);
         foreach($images as $image){
             $tableImages[] = $image['feature_image'];
         }
@@ -132,9 +131,32 @@ class PhotoGallaryController extends Controller
     {
         
     }
+    public function productGallery(Request $request)
+    {
+        $images = DB::table('product_images')->where('product_id', encryptor('decrypt', $request->id))->get()->toArray();
+        foreach($images as $image){
+            $tableImages[] = $image['feature_image'];
+        }
+        $data=array();
+        $storeFolder = public_path('uploads/pGgallery');
+        $file_path = public_path('uploads/pGgallery/');
+        $files = scandir($storeFolder);
+        foreach ( $files as $file ) {
+            if ($file !='.' && $file !='..' && in_array($file,$tableImages)) {       
+                $obj['name'] = $file;
+                $file_path = public_path('uploads/pGgallery/').$file;
+                $obj['size'] = filesize($file_path);          
+                $obj['path'] = url('public/uploads/pGgallery/'.$file);
+                $data[] = $obj;
+            }
+        }
+        //dd($data);
+        return response()->json($data);
+    }
     public function product_photo_show($id)
     {
         $pGalleryCat = DB::table('product_images')->where('product_id', encryptor('decrypt', $id))->get();
+        dd($pGalleryCat);die;
         return view('pGallery.product-photo',compact('pGalleryCat'));
     }
     public function product_photo_upload(Request $request)

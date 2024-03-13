@@ -63,7 +63,7 @@ var myDropZone = new Dropzone("#image-upload", {
             var myDropzone = this;
 
             $.ajax({
-                url: "{{route(currentUser().'.pGallery.index')}}",
+                url: "{{route(currentUser().'.productGallery')}}",
                 type: 'GET',
                 dataType: 'json',
                 data: {gid: {{$pGalleryCat}}},
