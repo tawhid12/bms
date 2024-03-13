@@ -135,7 +135,7 @@ class PhotoGallaryController extends Controller
     {
         $images = DB::table('product_images')->where('product_id', $request->id)->get();
         foreach($images as $image){
-            $tableImages[] = $image['image'];
+            $tableImages[] = $image->image; // Accessing property as object
         }
         $data=array();
         $storeFolder = public_path('uploads/product_images');
