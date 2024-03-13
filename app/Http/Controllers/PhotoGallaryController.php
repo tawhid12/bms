@@ -181,6 +181,6 @@ class PhotoGallaryController extends Controller
             }
             DB::table('product_images')->where('id', $request->get('id'))->delete();
         }
-        return response()->json(['success'=>$data->image]);
+        return response()->json(['success'=>$data->image]); 
     }
 }
