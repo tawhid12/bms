@@ -91,7 +91,7 @@ var myDropZone = new Dropzone("#image-upload", {
                 $.ajax({
                     type: 'get',
                     url: "{{route(currentUser().'.product_photo_delete')}}",
-                    data: {filename: id},
+                    data: {id: id},
                     success: function (data){
                         //toastr.success(data.success +" File has been successfully removed!");
                         toastr.success("File has been successfully removed!");
