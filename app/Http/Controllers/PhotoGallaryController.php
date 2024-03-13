@@ -134,7 +134,6 @@ class PhotoGallaryController extends Controller
     public function productGallery(Request $request)
     {
         $images = DB::table('product_images')->where('product_id', $request->id)->get()->toArray();
-        dd($images);
         foreach($images as $image){
             $tableImages[] = $image['image'];
         }
@@ -151,7 +150,7 @@ class PhotoGallaryController extends Controller
                 $data[] = $obj;
             }
         }
-        //dd($data);
+        dd($data);
         return response()->json($data);
     }
     public function product_photo_show($id)
