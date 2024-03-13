@@ -134,21 +134,21 @@ class PhotoGallaryController extends Controller
     public function productGallery(Request $request)
     {
         $images = DB::table('product_images')->where('product_id', $request->id)->get();
-        foreach($images as $image){
+        /*foreach($images as $image){
             $tableImages[] = $image->image; // Accessing property as object
         }
         $data=array();
-        $storeFolder = public_path('uploads/product_images');
+        $storeFolder = public_path('uploads/product_images');*/
         $file_path = public_path('uploads/product_images/');
-        $files = scandir($storeFolder);
-        foreach ( $files as $file ) {
-            if ($file !='.' && $file !='..' && in_array($file,$tableImages)) {       
-                $obj['name'] = $file;
-                $file_path = public_path('uploads/product_images/').$file;
+        //$files = scandir($storeFolder);
+        foreach ( $images as $file ) {
+              
+                $obj['name'] = $file->image;
+                $file_path = public_path('uploads/product_images/').$file->image;
                 $obj['size'] = filesize($file_path);          
-                $obj['path'] = url('public/uploads/product_images/'.$file);
+                $obj['path'] = url('public/uploads/product_images/'.$file->image);
                 $data[] = $obj;
-            }
+           
         }
         dd($data);
         return response()->json($data);
