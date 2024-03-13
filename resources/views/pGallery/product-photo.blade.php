@@ -85,7 +85,7 @@ var myDropZone = new Dropzone("#image-upload", {
                 if(file.previewElement.id != ""){
                     var name = file.previewElement.id;
                 }else{
-                    var name = file.id;
+                    var id = file.id;
                 }
                 //console.log(name);
                 $.ajax({
