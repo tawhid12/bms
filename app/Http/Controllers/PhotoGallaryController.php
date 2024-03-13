@@ -139,13 +139,13 @@ class PhotoGallaryController extends Controller
         }
         $data=array();
         $storeFolder = public_path('uploads/product_images');*/
-        $file_path = public_path('uploads/product_images/');
+        //$file_path = public_path('uploads/product_images/');
         //$files = scandir($storeFolder);
         foreach ( $images as $file ) {
               
                 $obj['name'] = $file->image;
                 $file_path = public_path('uploads/product_images/').$file->image;
-                $obj['size'] = filesize(public_path('uploads/product_images/').$file->image);          
+                $obj['size'] = filesize($file_path);          
                 $obj['path'] = url('public/uploads/product_images/'.$file->image);
                 $data[] = $obj;
            
