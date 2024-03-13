@@ -36,7 +36,7 @@
                         <label for="image"><b>{{__('Gallery Photo')}}</b></label>
                         <form action="{{route(currentUser().'.product_photo_upload')}}" method="post" enctype="multipart/form-data" id="image-upload" class="mt-3 dropzone">
                             @csrf
-                            <input type="hidden" class="form-control" name="product_id" value="{{$pGalleryCat}}" id="album" required>
+                            <input type="hidden" class="form-control" name="product_id" value="{{$id}}" id="album" required>
                             <div>
                                 
                             </div>
@@ -61,12 +61,11 @@ var myDropZone = new Dropzone("#image-upload", {
         init:function() {
             // Get images
             var myDropzone = this;
-
             $.ajax({
-                url: "{{route(currentUser().'.productGallery')}}",
+                url: "{{route(currentUser().'.product_photo_show')}}",
                 type: 'GET',
                 dataType: 'json',
-                data: {gid: {{$pGalleryCat}}},
+                data: {id: {{$id}}},
                 success: function(data){
                     console.log(data);
                     $.each(data, function (key, value) {
