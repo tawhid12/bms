@@ -69,7 +69,7 @@ var myDropZone = new Dropzone("#image-upload", {
                 success: function(data){
                     console.log(data);
                     $.each(data, function (key, value) {
-                        var file = {name: value.name, size: value.size};
+                        var file = {name: value.name, size: value.size, id: value.id};
                         myDropzone.options.addedfile.call(myDropzone, file);
                         myDropzone.options.thumbnail.call(myDropzone, file, value.path);
                         myDropzone.emit("complete", file);
@@ -85,13 +85,13 @@ var myDropZone = new Dropzone("#image-upload", {
                 if(file.previewElement.id != ""){
                     var name = file.previewElement.id;
                 }else{
-                    var name = file.name;
+                    var name = file.id;
                 }
                 //console.log(name);
                 $.ajax({
                     type: 'get',
                     url: "{{route(currentUser().'.product_photo_delete')}}",
-                    data: {filename: name},
+                    data: {filename: id},
                     success: function (data){
                         //toastr.success(data.success +" File has been successfully removed!");
                         toastr.success("File has been successfully removed!");

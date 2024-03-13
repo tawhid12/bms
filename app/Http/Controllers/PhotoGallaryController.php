@@ -139,6 +139,7 @@ class PhotoGallaryController extends Controller
                 $file_path = public_path().'/'.$file->image;
                 $obj['size'] = filesize($file_path);          
                 $obj['path'] = url('public/'.$file->image);
+                $obj['path'] = $file->id;
                 $data[] = $obj;
         }
         //dd($data);
