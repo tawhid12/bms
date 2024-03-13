@@ -144,7 +144,7 @@ class PhotoGallaryController extends Controller
         foreach ( $images as $file ) {
               
                 $obj['name'] = $file->image;
-                $file_path = public_path().$file->image;
+                $file_path = public_path().'/'.$file->image;
                 $obj['size'] = filesize($file_path);          
                 $obj['path'] = url('public/uploads/product_images/'.$file->image);
                 $data[] = $obj;
