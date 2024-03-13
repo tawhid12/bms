@@ -36,7 +36,7 @@
                         <label for="image"><b>{{__('Gallery Photo')}}</b></label>
                         <form action="{{route(currentUser().'.product_photo_upload')}}" method="post" enctype="multipart/form-data" id="image-upload" class="mt-3 dropzone">
                             @csrf
-                            <input type="hidden" class="form-control" name="product_id" value="{{$id}}" id="album" required>
+                            <input type="hidden" class="form-control" name="product_id" value="" id="album" required>
                             <div>
                                 
                             </div>
