@@ -171,8 +171,9 @@ class PhotoGallaryController extends Controller
     }
 
     public function product_photo_delete(Request $request){
-        DB::table('product_images')->where('id', $request->get('id'))->delete();die;
         $data = DB::table('product_images')->where('id',$request->get('id'))->first();
+        echo public_path('uploads/product_images/').$data->image;die;
+       
         if($data){
             $path = public_path('uploads/product_images/').$data->image;
             if (file_exists($path)) {
