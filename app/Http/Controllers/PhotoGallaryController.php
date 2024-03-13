@@ -134,21 +134,12 @@ class PhotoGallaryController extends Controller
     public function productGallery(Request $request)
     {
         $images = DB::table('product_images')->where('product_id', $request->id)->get();
-        /*foreach($images as $image){
-            $tableImages[] = $image->image; // Accessing property as object
-        }
-        $data=array();
-        $storeFolder = public_path('uploads/product_images');*/
-        //$file_path = public_path('uploads/product_images/');
-        //$files = scandir($storeFolder);
         foreach ( $images as $file ) {
-              
                 $obj['name'] = $file->image;
                 $file_path = public_path().'/'.$file->image;
                 $obj['size'] = filesize($file_path);          
                 $obj['path'] = url('public/'.$file->image);
                 $data[] = $obj;
-           
         }
         //dd($data);
         return response()->json($data);
@@ -176,5 +167,16 @@ class PhotoGallaryController extends Controller
         $imageUpload->image = 'uploads/product_images/'.$file_name;
         $imageUpload->save();
         return response()->json(['success' => $file_name]);
+    }
+
+    public function product_photo_delete(Request $request){
+        dd($request);
+        $id =  $request->get('id');
+        DB::table('product_images')->where('id',$id)->delete();
+        $path = public_path('uploads/product_images/').$filename;
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        return response()->json(['success'=>$filename]);
     }
 }
