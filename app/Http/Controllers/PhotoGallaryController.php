@@ -150,7 +150,7 @@ class PhotoGallaryController extends Controller
                 $data[] = $obj;
            
         }
-        dd($data);
+        //dd($data);
         return response()->json($data);
     }
     public function product_photo_show($id)
