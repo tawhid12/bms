@@ -80,9 +80,9 @@ class CareerController extends Controller
      * @param  \App\Models\Career  $career
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Career $career)
     {
-        
+        return view('career.edit', compact('career'));
     }
 
     /**
@@ -92,9 +92,32 @@ class CareerController extends Controller
      * @param  \App\Models\Career  $career
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Career $career)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $c = Career::findOrFail($id);
+            $c->car_title =$request->car_title;
+            $c->car_des =$request->car_des;
+            if ($request->hasFile('upload_file') && $request->file('upload_file')->isValid()) {
+                $file = $request->file('upload_file');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/career/'), $fileName);
+                $c->upload_file = 'uploads/career/'.$fileName;
+            }
+            
+                if ($c->save()) {
+                    Toastr::success('Submitted Successfully!');
+                    return redirect()->back();
+                } else {
+                    Toastr::warning('Please try Again!');
+                    return redirect()->back();
+                }
+            
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**

@@ -46,6 +46,17 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="unpulished_date">Unpublished Date</label>
+                                            <input type="date" id="unpulished_date" class="form-control"
+                                                name="unpulished_date">
+                                            
+                                            @if ($errors->has('unpulished_date'))
+                                                <span class="text-danger"> {{ $errors->first('unpulished_date') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary my-2">Save</button>

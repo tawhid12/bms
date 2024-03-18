@@ -223,7 +223,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
-                                <a class="dropdown-item" href="{{ route('companydes') }}">company Description</a>
+                                <a class="dropdown-item" href="{{ route('companydes') }}">Company Description</a>
                                 <a class="dropdown-item" href="{{ route('presidentsp') }}">President Speech</a>
                                 <a class="dropdown-item" href="{{ route('mission') }}">Mission</a>
                                 <a class="dropdown-item" href="{{ route('vission') }}">Vission</a>

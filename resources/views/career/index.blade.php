@@ -37,7 +37,7 @@
                                         <td><a width="100px" href="{{ asset('uploads/career/' . $c->upload_file) }}">File</a>
                                         </td>
                                         <td class="white-space-nowrap">
-
+                                            <a class="btn btn-sm btn-success" href="{{route(currentUser().'.car.edit',$c)}}">Edit</a>
                                         </td>
                                     </tr>
                                 @empty
