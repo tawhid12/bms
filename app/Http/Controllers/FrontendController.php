@@ -99,11 +99,10 @@ class FrontendController extends Controller
     }
     public function productbycat($id){
         $all_categories = Category::all();
-        dd($all_categories);
         $categories = Category::with(['products' => function ($query) {
             $query->orderBy('serial', 'asc'); // Replace 'your_column_name' with the column you want to order by
         }])->where('id',$id)->get();
-        return view('front.all-products',compact('categories','all_categories'));
+        return view('front.productbycat',compact('categories','all_categories'));
     }
     public function singleproduct($slug){
         $product = Product::where('slug',$slug)->first();
