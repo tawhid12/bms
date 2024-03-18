@@ -64,6 +64,7 @@
         $(document).on('click', '.dropdown-item.category', function(e) {
                 e.preventDefault();
                 var href = $(this).attr('href');
+                alert(href)
                 var id = getParameterByName('id', href);
                 filterizd.filterizr('filter', id);
             });
