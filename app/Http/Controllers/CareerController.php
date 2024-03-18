@@ -37,7 +37,7 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-
+        try {
             $c = new Career;
             $c->car_title =$request->car_title;
             $c->car_des =$request->car_des;
@@ -47,10 +47,20 @@ class CareerController extends Controller
                 $file->move(public_path('uploads/career/'), $fileName);
                 $c->upload_file = 'uploads/career/'.$fileName;
             }
-            $c->upload_file = $fileName;
-            $c->save();
             
-
+                if ($c->save()) {
+                    Toastr::success('Submitted Successfully!');
+                    return redirect()->back();
+                } else {
+                    Toastr::warning('Please try Again!');
+                    return redirect()->back();
+                }
+            
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**
