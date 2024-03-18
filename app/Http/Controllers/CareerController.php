@@ -80,9 +80,9 @@ class CareerController extends Controller
      * @param  \App\Models\Career  $career
      * @return \Illuminate\Http\Response
      */
-    public function edit(Career $career)
+    public function edit($id)
     {
-        //
+        
     }
 
     /**

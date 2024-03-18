@@ -236,9 +236,12 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('allproducts') }}">All</a>
-                                <a class="dropdown-item" href="">Rope</a>
-                                <a class="dropdown-item" href="">Twin</a>
-                                <a class="dropdown-item" href="">Hessian</a>
+                                @forelse ( \App\Models\Category::all() as $c )
+                                <a class="dropdown-item" href="" style="text-transform: uppercase">{{$c->cat_name}}</a>
+                                @empty
+                                    
+                                @endforelse
+                               
                             </div>
                         </li>
                         <li class="nav-item dropdown">
