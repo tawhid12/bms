@@ -29,17 +29,19 @@
                     <div class="filtr-container mt-3">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
+                                <a href="{{route('singleproduct',$product->slug)}}">
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
                                     <div class="latest-slider-img">
                                         <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
                                         <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
                                         <div class="ovr-top text-center">
                                             <h3>{{ $product->title }}</h3>
-                                            <a href="{{route('singleproduct',$product->slug)}}">Product details<i class="fa fa-share-square-o"></i></a>
+                                            {{-- <a href="{{route('singleproduct',$product->slug)}}">Product details<i class="fa fa-share-square-o"></i></a> --}}
                                         </div>
                                     </div>
                                     <h4>{{ $product->title }}</h4>
                                 </div>
+                                </a>
                             @empty
                             @endforelse
                         @empty
