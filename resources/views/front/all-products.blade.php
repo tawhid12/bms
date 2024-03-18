@@ -22,7 +22,7 @@
                         @endforelse
                     </ul>
                 </div>
-                <div class="w-100">
+                <div class="">
                     <div class="col-md-3" style="padding: 0px; position: relative;">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
