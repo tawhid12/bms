@@ -76,7 +76,7 @@
         <!-- nav bar -->
         @if (url('/') === request()->url())
             <div class="navigation">
-                <div class="container">
+                {{-- <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="{{route('front')}}">
                             <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
@@ -174,11 +174,11 @@
                             </ul>
                         </div>
                     </nav>
-                </div>
+                </div> --}}
             </div>
             @else
                 <div class="navigation custom-nav">
-                    <div class="container">
+                    {{-- <div class="container">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{route('front')}}">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
@@ -276,7 +276,7 @@
                                 </ul>
                             </div>
                         </nav>
-                    </div>
+                    </div> --}}
                     </div>
         @endif
 
