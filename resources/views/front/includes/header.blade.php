@@ -74,9 +74,11 @@
             </div>
         </div>
         <!-- nav bar -->
-
-        <div class=" @if (url('/') === request()->url()) navigation @else navigation custom-nav @endif">
-   
+        @if (url('/') === request()->url())
+            <div class="navigation">
+            @else
+                <div class="navigation custom-nav">
+        @endif
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="{{route('front')}}">
@@ -89,7 +91,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
+                    {{-- <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
 
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('front')}}">Home</a>
@@ -172,7 +174,7 @@
                                 @endforeach
                             </div>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </nav>
         </div>
