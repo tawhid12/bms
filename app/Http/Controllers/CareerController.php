@@ -96,7 +96,7 @@ class CareerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
+     
             $c = Career::findOrFail($id);
             $c->car_title =$request->car_title;
             $c->car_des =$request->car_des;
@@ -108,19 +108,7 @@ class CareerController extends Controller
                 $c->upload_file = 'uploads/career/'.$fileName;
             }
             
-                if ($c->save()) {
-                    Toastr::success('Submitted Successfully!');
-                    return redirect()->back();
-                } else {
-                    Toastr::warning('Please try Again!');
-                    return redirect()->back();
-                }
-            
-        } catch (Exception $e) {
-            Toastr::warning('Please try Again!');
-            // dd($e);
-            return back()->withInput();
-        }
+        $c->save();
     }
 
     /**
