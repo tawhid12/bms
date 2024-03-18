@@ -23,10 +23,10 @@
                     </ul>
                 </div>
                 <div class="w-100">
-                    <div class="" style="padding: 0px; position: relative;">
+                    <div class="col-md-3" style="padding: 0px; position: relative;">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
-                                <div class="col-md-3 {{$category->cat_name}}" data-category="{{$category->id}}" data-sort="value">
+                                <div class="{{$category->cat_name}}" data-category="{{$category->id}}" data-sort="value">
                                     <div class="latest-slider-img">
                                         <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
                                         <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
