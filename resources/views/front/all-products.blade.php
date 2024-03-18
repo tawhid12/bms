@@ -67,5 +67,4 @@
         });
     }(jQuery));
 </script>
-    
 @endpush
