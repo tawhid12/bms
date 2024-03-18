@@ -101,7 +101,6 @@ class FrontendController extends Controller
         $categories = Category::with(['products' => function ($query) {
             $query->orderBy('serial', 'asc'); // Replace 'your_column_name' with the column you want to order by
         }])->where('id',$id)->get();
-        dd($categories);
         return view('front.all-products',compact('categories'));
     }
     public function singleproduct($slug){
