@@ -29,8 +29,9 @@
                     <div class="filtr-container mt-3">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
-                                <a href="{{route('singleproduct',$product->slug)}}">
+                               
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
+                                    <a href="{{route('singleproduct',$product->slug)}}">
                                     <div class="latest-slider-img">
                                         <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
                                         <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
@@ -40,8 +41,9 @@
                                         </div>
                                     </div>
                                     <h4>{{ $product->title }}</h4>
-                                </div>
                                 </a>
+                                </div>
+                               
                             @empty
                             @endforelse
                         @empty
