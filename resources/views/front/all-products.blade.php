@@ -17,7 +17,7 @@
                         <!-- For filtering controls add -->
                         <li class="active" data-filter="*"> All items </li>
                         @forelse ($categories as $c)
-                            <li data-filter=".{{ $c->id }}">{{ $c->cat_name }}</li>
+                            <li data-filter=".{{ $c->cat_name }}">{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
                     </ul>
@@ -26,7 +26,7 @@
                     <div class="" style="padding: 0px; position: relative;">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
-                                <div class="col-12 col-md-3 {{$category->cat_name}}" data-category="{{$category->id}}" data-sort="value">
+                                <div class="col-md-3 {{$category->cat_name}}" data-category="{{$category->id}}" data-sort="value">
                                     <div class="latest-slider-img">
                                         <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
                                         <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
