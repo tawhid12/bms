@@ -15,8 +15,8 @@
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
-                        <li data-filter="all">All items</li>
-                        @forelse ($all_categories as $c)
+                        <li><a class="dropdown-item" href="{{ route('allproducts') }}">All items</a></li>
+                        @forelse ($categories as $c)
                             <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
@@ -52,10 +52,3 @@
     </section>
 
 @endsection
-@push('scripts')
-    <script>
-        var filterizd = $('.filtr-container').filterizr({
-            //options object
-        });
-    </script>
-@endpush
