@@ -117,7 +117,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('allproducts') }}">All</a>
                                 @forelse ( \App\Models\Category::all() as $c )
-                                <a class="dropdown-item" href="" style="text-transform: uppercase">{{$c->cat_name}}</a>
+                                <a class="dropdown-item" href="{{ route('allproducts') }}?cat_name={{$c->cat_name}}" style="text-transform: uppercase">{{$c->cat_name}}</a>
                                 @empty
                                     
                                 @endforelse

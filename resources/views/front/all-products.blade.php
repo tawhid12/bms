@@ -14,15 +14,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
+                        @php
+                        $cat_name = request()->query('cat_name');
+                        @endphp
+                        {{$cat_name}}
                         <!-- For filtering controls add -->
                         <li class="active" data-filter="all">All items</li>
-                        {{-- @forelse ($categories as $c)
+                        @forelse ($categories as $c)
                             <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
-                        @endforelse --}}
-                        <li data-filter="1">Rope</li>
-                        <li data-filter="2">Twine</li>
-                        <li data-filter="3">Hessian Cloth</li>
+                        @endforelse
                     </ul>
                 </div>
                 <div class="w-100">
