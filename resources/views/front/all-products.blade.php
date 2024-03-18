@@ -17,7 +17,7 @@
                         <!-- For filtering controls add -->
                         <li data-filter="all">All items</li>
                         @forelse ($categories as $c)
-                            <li data-filter="{{ $c->id }}" @if($c->id == $id) class="active" @endif>{{ $c->cat_name }}</li>
+                            <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
                     </ul>
