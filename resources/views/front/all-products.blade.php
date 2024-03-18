@@ -61,10 +61,8 @@
             //options object
         });
         // Assuming you have a button to trigger filtering based on ID
-        $('simplefilter li').on('click', function() {
-            var filterValue = $(this).data('filter');
-            alert(filterValue);
-            filterizd.filterizr('filter', filterValue);
+        $('.category li').on('click', function() {
+            filterizd.filterizr('filter', {{$id}});
         });
     </script>
 @endpush
