@@ -15,13 +15,13 @@
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
                         @php
-                        $cat_name = request()->query('cat_name');
+                        $id = request()->query('id');
                         @endphp
                         {{$cat_name}}
                         <!-- For filtering controls add -->
                         <li class="active" data-filter="all">All items</li>
                         @forelse ($categories as $c)
-                            <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
+                            <li data-filter="{{ $c->id }}" @if($c->id == $id) active @endif>{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
                     </ul>
