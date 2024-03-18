@@ -159,6 +159,7 @@ Route::get('/president-speech', [front::class,'presidentsp'])->name('presidentsp
 Route::get('/mission', [front::class,'mission'])->name('mission');
 Route::get('/vission', [front::class,'vission'])->name('vission');
 Route::get('/all-products', [front::class,'allproducts'])->name('allproducts');
+Route::get('/cat/{id}', [front::class,'productbycat'])->name('productbycat');
 Route::get('/all-ebrochure', [front::class,'allbrochure'])->name('allbrochure');
 Route::get('/{slug}', [front::class,'singleproduct'])->name('singleproduct');
 
