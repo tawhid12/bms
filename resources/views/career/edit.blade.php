@@ -11,7 +11,6 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            {{$career}}
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.car.update',encryptor('encrypt',$career->id))}}">
                                 @csrf
                                 @method('PATCH')
