@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with(['category','ebrochure'])->orderBy('serail', 'asc')->paginate(10);
+        $products = Product::with(['category','ebrochure'])->orderBy('serial', 'asc')->paginate(10);
         return view('product.index', compact('products'));
     }
 
@@ -39,7 +39,8 @@ class ProductController extends Controller
         try {
             $product = new Product;
 
-            if ($request->hasFile('featured_image') && $request->file('featured_image')->isValid()) {
+            if (
+                 $request->file('featured_image')->isValid()) {
                 $file = $request->file('featured_image');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/featured_image/'), $fileName);
