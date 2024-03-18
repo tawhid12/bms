@@ -62,7 +62,7 @@
         $('.dropdown-item.category').on('click', function(e) {
                 e.preventDefault();
                 var id = $(this).data('filter');
-                filterizd.filterizr('filter', id);
+                $('.filtr-container').filterizr('filter', id);
             });
     </script>
 @endpush
