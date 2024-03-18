@@ -98,6 +98,7 @@ class CareerController extends Controller
     {
      
             $c = Career::findOrFail($id);
+            dd($c);
             $c->car_title =$request->car_title;
             $c->car_des =$request->car_des;
             $c->unpulished_date =date('Y-m-d',$request->unpulished_date);
