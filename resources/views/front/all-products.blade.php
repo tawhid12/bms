@@ -14,9 +14,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
-                        @php
-                        $id = request()->query('id');
-                        @endphp
                         <!-- For filtering controls add -->
                         <li data-filter="all">All items</li>
                         @forelse ($categories as $c)
