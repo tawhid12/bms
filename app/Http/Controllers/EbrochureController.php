@@ -15,7 +15,7 @@ class EbrochureController extends Controller
      */
     public function index()
     {
-        $ebrochures = Ebrochure::paginate(10);
+        $ebrochures = Ebrochure::orderBy('serial','asc')->paginate(10);
         return view('ebrochure.index',compact('ebrochures'));
     }
 
@@ -37,12 +37,13 @@ class EbrochureController extends Controller
             if ($request->has('picture'))
                 $ebrochure->image = 'uploads/ebrochure/thumb/' . $this->resizeImage($request->picture, 'uploads/ebrochure', true, 256, 423, true);
             $ebrochure->title = $request->title;
-            if ($request->file('upload_pdf')->isValid()) {
+            if ($request->hasFile('upload_pdf') && $request->file('upload_pdf')->isValid()) {
                 $file = $request->file('upload_pdf');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/upload_pdf/'), $fileName);
                 $ebrochure->upload_pdf = "uploads/upload_pdf/".$fileName;
             }
+            $ebrochure->serial = $request->serial;
             if ($ebrochure->save()) {
                 Toastr::success('Brochure Create Successfully!');
                 return redirect()->route(currentUser() . '.ebrochure.index');
@@ -71,7 +72,8 @@ class EbrochureController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ebrochure=Ebrochure::findOrFail(encryptor('decrypt',$id));
+        return view('ebrochure.edit',compact('ebrochure'));
     }
 
     /**
@@ -79,7 +81,31 @@ class EbrochureController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $ebrochure = Ebrochure::findOrFail(encryptor('decrypt',$id));
+            if ($request->has('picture'))
+                $ebrochure->image = 'uploads/ebrochure/thumb/' . $this->resizeImage($request->picture, 'uploads/ebrochure', true, 256, 423, true);
+            $ebrochure->title = $request->title;
+            if ($request->hasFile('upload_pdf') && $request->file('upload_pdf')->isValid()) {
+                $file = $request->file('upload_pdf');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/upload_pdf/'), $fileName);
+                $ebrochure->upload_pdf = "uploads/upload_pdf/".$fileName;
+            }
+            $ebrochure->serial = $request->serial;
+            if ($ebrochure->save()) {
+                Toastr::success('Brochure Create Successfully!');
+                return redirect()->route(currentUser() . '.ebrochure.index');
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+
+            return back()->withInput();
+        }
     }
 
     /**
@@ -87,6 +113,11 @@ class EbrochureController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $b= Ebrochure::findOrFail(encryptor('decrypt',$id));
+        $path='uploads/ebrochure/thumb/';
+        if($this->deleteImage($b->image,$path));
+        $b->delete();
+        Toastr::warning('Ebrochure Deleted Permanently!');
+        return redirect()->back();
     }
 }

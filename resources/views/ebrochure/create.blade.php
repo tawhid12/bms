@@ -45,6 +45,18 @@
                                                 @endif
                                         </div>
                                     </div>
+                                    <div class=" col-12">
+                                        <div class="form-group">
+                                            <label for="Serial">Serial</label>
+                                            <input type="text" id="serial" class="form-control"
+                                                placeholder="Serial" name="serial" value="{{old('serial')}}">
+                                               
+                                                @if($errors->has('serial'))
+                                                    <span class="text-danger"> {{ $errors->first('serial') }}</span>
+                                                @endif
+                                                
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">

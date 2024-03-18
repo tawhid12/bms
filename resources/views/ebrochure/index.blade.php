@@ -25,6 +25,7 @@
                                 <th scope="col">{{__('Image')}}</th>
                                 <th scope="col">{{__('PDF')}}</th>
                                 <th scope="col">{{__('Status')}}</th>
+                                <th scope="col">{{__('Serial')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
@@ -36,6 +37,7 @@
                                 <td><img width="100px" src="{{asset($e->image)}}" alt=""></td>
                                 <td><a href="{{asset($e->upload_pdf)}}">View PDF</a></td>
                                 <td>{{ $e->status == 1?"Active":"Inactive" }}</td>
+                                <td>{{ $e->serial }}</td>
                                 <td class="white-space-nowrap">
                                     <a href="{{route(currentUser().'.ebrochure.edit',encryptor('encrypt',$e->id))}}">
                                         <i class="bi bi-pencil-square"></i>

@@ -39,8 +39,9 @@ class CareerController extends Controller
     {
         try {
             $c = new Career;
-           
-            if ($request->file('upload_file')->isValid()) {
+            $c->car_title =$request->car_title;
+            $c->car_des =$request->car_des;
+            if ($request->hasFile('upload_file') && $request->file('upload_file')->isValid()) {
                 $file = $request->file('upload_file');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/career/'), $fileName);

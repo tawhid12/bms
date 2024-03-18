@@ -18,6 +18,8 @@
                                     <th scope="col">{{__('#SL')}}</th>
                                     <th scope="col">{{__('Title')}}</th>
                                     <th scope="col">{{__('Category')}}</th>
+                                    <th scope="col">{{__('Is Featured')}}</th>
+                                    <th scope="col">{{__('Serial')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                 </tr>
                             </thead>
@@ -27,6 +29,8 @@
                                 <th scope="row">{{ ++$loop->index }}</th>
                                     <td>{{$p->title}}</td>
                                     <td>{{$p->category?->cat_name}}</td>
+                                    <td>@if($p->is_featured==1) Featured @else - @endif</td>
+                                    <td>{{$p->serial}}</td>
                                     <td class="white-space-nowrap">
                                         <a class="btn btn-sm btn-primary" href="{{route(currentUser().'.product.show',$p)}}">Show</a>
                                         <a class="btn btn-sm btn-success" href="{{route(currentUser().'.product.edit',$p)}}">Edit</a>

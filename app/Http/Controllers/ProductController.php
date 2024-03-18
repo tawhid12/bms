@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with(['category','ebrochure'])->paginate(10);
+        $products = Product::with(['category','ebrochure'])->orderBy('serail', 'asc')->paginate(10);
         return view('product.index', compact('products'));
     }
 
@@ -63,6 +63,7 @@ class ProductController extends Controller
             $product->srbsc = $request->srbsc?$request->srbsc:' ';
             $product->ebrochure_id = $request->ebrochure_id;
             $product->is_featured = $request->is_featured;
+            $product->serial = $request->serial;
             //$c->upload_file = $fileName;
 
 
@@ -131,6 +132,7 @@ class ProductController extends Controller
             $product->srbsc = $request->srbsc?$request->srbsc:' ';
             $product->ebrochure_id = $request->ebrochure_id;
             $product->is_featured = $request->is_featured;
+            $product->serial = $request->serial;
             //$c->upload_file = $fileName;
 
 
