@@ -16,7 +16,7 @@
                         <li data-filter="*" class="active">All</li>
                         <li data-filter=".web">Web</li>
                         @forelse ($categories as $c)
-                            <li data-filter=".{{ $c->cat_name }}">Graphic</li>
+                            <li data-filter=".{{ $c->id }}">Graphic</li>
                         @empty
                         @endforelse
                     </ul>
@@ -25,7 +25,7 @@
             <div class="row project-list">
                 @forelse ($categories as $key => $category)
                     @forelse($category->products as $product)
-                        <div class="col-md-4 web">
+                        <div class="col-md-4 {{$category->id}}">
                             <div class="single-project-item project-bg-1">
                                 <div class="project-hover">
                                     <a href=""><i class="fa fa-link"></i></a>
