@@ -87,8 +87,8 @@
                                     {!! html_entity_decode($product->pro_info) !!}
                                     <h3>Feature</h3>
                                     {!! html_entity_decode($product->feature) !!}
-                                    <button class="btn btn-sm btn-secondary d-block my-2"><i class="px-2 fa fa-file-pdf-o"
-                                            aria-hidden="true"></i>Download Details</button>
+                                    <button class="btn btn-sm btn-secondary d-block my-2"><a target="_blank" href="{{ asset($product->ebrochure->upload_pdf) }}"><i class="px-2 fa fa-file-pdf-o"
+                                        aria-hidden="true"></i>Download Details</a></button>
                                     <h3>Get In Touch</h3>
                                 </div>
 
