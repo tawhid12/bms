@@ -17,7 +17,6 @@
                         @php
                         $id = request()->query('id');
                         @endphp
-                        {{$cat_name}}
                         <!-- For filtering controls add -->
                         <li class="active" data-filter="all">All items</li>
                         @forelse ($categories as $c)
