@@ -60,9 +60,11 @@
         var filterizd = $('.filtr-container').filterizr({
             //options object
         });
-        // Assuming you have a button to trigger filtering based on ID
-        $('.category li').on('click', function() {
-            filterizd.filterizr('filter', {{$id}});
-        });
+        // Assuming you have a dropdown to trigger filtering
+        $('.dropdown-item.category').on('click', function(e) {
+                e.preventDefault();
+                var id = $(this).data('filter');
+                filterizd.filterizr('filter', id);
+            });
     </script>
 @endpush
