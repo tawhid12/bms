@@ -18,7 +18,7 @@
                         $id = request()->query('id');
                         @endphp
                         <!-- For filtering controls add -->
-                        <li class="active" data-filter="all">All items</li>
+                        <li  @if(empty($id)) class="active" @endif data-filter="all">All items</li>
                         @forelse ($categories as $c)
                             <li data-filter="{{ $c->id }}" @if($c->id == $id) class="active" @endif>{{ $c->cat_name }}</li>
                         @empty
