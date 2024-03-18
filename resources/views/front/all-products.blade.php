@@ -54,9 +54,7 @@
 @endsection
 @push('scripts')
     <script>
-        var filterizd = $('.filtr-container').filterizr({
-            //options object
-        });
+      
         // Assuming you have a button to trigger filtering based on ID
         // Assuming you have a dropdown to trigger filtering
         $('.dropdown-item.category').on('click', function(e) {
