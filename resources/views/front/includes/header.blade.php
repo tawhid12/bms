@@ -73,7 +73,109 @@
                 </div>
             </div>
         </div>
+        <!-- nav bar -->
 
+        <div class=" @if (url('/') === request()->url()) navigation @else navigation custom-nav @endif">
+   
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{{route('front')}}">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto bg-light bg-transparent-md">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('front')}}">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
+                                <a class="dropdown-item" href="{{ route('companydes') }}">Company Description</a>
+                                <a class="dropdown-item" href="{{ route('presidentsp') }}">President Speech</a>
+                                <a class="dropdown-item" href="{{ route('mission') }}">Mission</a>
+                                <a class="dropdown-item" href="{{ route('vission') }}">Vission</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                All Products
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('allproducts') }}">All</a>
+                                @forelse ( \App\Models\Category::all() as $c )
+                                <a class="dropdown-item" href="" style="text-transform: uppercase">{{$c->cat_name}}</a>
+                                @empty
+                                    
+                                @endforelse
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Gallery
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{route('pGallery')}}">Photo</a>
+                                <a class="dropdown-item" href="">Video</a>
+                                <a class="dropdown-item" href="">Achievement</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('career')}}">Career</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Media Center</a>
+                            </li> --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Contact
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{route('bmscompany')}}">BMS Company Limited</a>
+                                <a class="dropdown-item" href="{{route('bmsrope')}}">BMS Rope Company Limited</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Mother company
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('companyprofile') }}">Company Profile</a>
+                                <a class="dropdown-item" href="{{ route('companyhistory') }}">History</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Ebrochure
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('allbrochure') }}">All</a>
+                                @foreach (\App\Models\Ebrochure::orderBy('serial')->get() as $ebrochure)
+                                    <a class="dropdown-item"
+                                        href="{{ asset($ebrochure->upload_pdf) }}">{{ $ebrochure->title }}</a>
+                                @endforeach
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        </div>
     </header>
     {{-- {{ asset('assets/images/design-hero.jpg') }} --}}
