@@ -15,15 +15,18 @@
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
-                        <li class="active" data-filter="all"> All items </li>
-                        @forelse ($categories as $c)
+                        <li data-filter="all">All items</li>
+                        {{-- @forelse ($categories as $c)
                             <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
-                        @endforelse
+                        @endforelse --}}
+                        <li data-filter="1">Rope</li>
+                        <li data-filter="2">Twine</li>
+                        <li data-filter="3">Hessian Cloth</li>
                     </ul>
                 </div>
                 <div class="w-100">
-                    <div class="filtr-container mt-3" style="padding: 0px; position: relative;">
+                    <div class="filtr-container mt-3">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
                                 <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
