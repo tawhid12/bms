@@ -81,7 +81,7 @@
         @endif
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="{{url('/')}}">
+                <a class="navbar-brand">
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
