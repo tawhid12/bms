@@ -41,7 +41,7 @@ class CareerController extends Controller
             $c = new Career;
             $c->car_title =$request->car_title;
             $c->car_des =$request->car_des;
-            $c->unpulished_date =date('Y-m-d',$request->unpulished_date);
+            $c->unpulished_date = date('Y-m-d', strtotime($request->unpublished_date));
             if ($request->hasFile('upload_file') && $request->file('upload_file')->isValid()) {
                 $file = $request->file('upload_file');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
@@ -100,7 +100,7 @@ class CareerController extends Controller
             $c = Career::findOrFail($id);
             $c->car_title =$request->car_title;
             $c->car_des =$request->car_des;
-            $c->unpulished_date =date('Y-m-d',$request->unpulished_date);
+            $c->unpulished_date = date('Y-m-d', strtotime($request->unpublished_date));
             if ($request->hasFile('upload_file') && $request->file('upload_file')->isValid()) {
                 $file = $request->file('upload_file');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
