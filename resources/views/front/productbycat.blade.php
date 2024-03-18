@@ -16,7 +16,7 @@
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
                         <li data-filter="all">All items</li>
-                        @forelse ($categories as $c)
+                        @forelse ($all_categories as $c)
                             <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
