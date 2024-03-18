@@ -27,6 +27,8 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $ebrochure = Ebrochure::all();
+        $serial = Product::pluck('serial')->toArray();
+        
         return view('product.create', compact('categories','ebrochure'));
     }
 
