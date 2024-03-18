@@ -23,8 +23,8 @@
                                                         class="text-danger">*</span></b></label>
                                         </div>
                                         <div class="col-12">
-                                            <input type="text" id="title" value="{{ old('car_title') }}"
-                                                class="form-control" placeholder="Title" name="car_title" value="{{$career->car_title}}">
+                                            <input type="text" id="title" value="{{ old('car_title',$career->car_title) }}"
+                                                class="form-control" placeholder="Title" name="car_title">
                                             @if ($errors->has('car_title'))
                                                 <span class="text-danger"> {{ $errors->first('car_title') }}</span>
                                             @endif
