@@ -8,56 +8,25 @@
     </style>
 @endpush
 @section('content')
-    <div class="section-padding">
-        <div class="container">
-            <div class="project-titles row">
-                <div class="col-md-12">
-                    <ul>
-                        <li data-filter="*" class="active">All</li>
-                        <li data-filter=".web">Web</li>
-                        @forelse ($categories as $c)
-                            <li data-filter=".{{ $c->id }}">Graphic</li>
-                        @empty
-                        @endforelse
-                    </ul>
-                </div>
-            </div>
-            <div class="row project-list">
-                @forelse ($categories as $key => $category)
-                    @forelse($category->products as $product)
-                        <div class="col-md-4 {{$category->id}}">
-                            <div class="single-project-item project-bg-1">
-                                <div class="project-hover">
-                                    <a href=""><i class="fa fa-link"></i></a>
-                                    <h4>Project Title<span>Art Work</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    @empty
-                    @endforelse
-                @empty
-                @endforelse
-            </div>
-        </div>
-    </div>
-    {{-- <section class="all_part" style="margin-top: 60px">
+
+    <section class="all_part" style="margin-top: 60px">
         <div class="container product">
-            <div class="row project-titles">
+            <div class="row">
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
-                        <li class="active" data-filter="*"> All items </li>
+                        <li class="active" data-filter="all"> All items </li>
                         @forelse ($categories as $c)
-                            <li data-filter=".{{ $c->cat_name }}">{{ $c->cat_name }}</li>
+                            <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
                         @endforelse
                     </ul>
                 </div>
-                <div class="w-100 project-list">
-                    <div class="" style="padding: 0px; position: relative;">
+                <div class="w-100">
+                    <div class="filtr-container mt-3" style="padding: 0px; position: relative;">
                         @forelse ($categories as $key => $category)
                             @forelse($category->products as $product)
-                                <div class="col-12 col-md-3 {{$category->cat_name}}" data-category="{{$category->id}}" data-sort="value">
+                                <div class="col-12 col-md-3 filtr-item" data-category="{{$category->id}}" data-sort="value">
                                     <div class="latest-slider-img">
                                         <img src="{{ asset($product->featured_image) }}" alt="" class="img-fluid w-100 h-100 img-1">
                                         <img src="{{ asset($product->featured_image_two) }}" alt="" class="img-fluid w-100 h-100 img-2">
@@ -76,26 +45,13 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
 @endsection
 @push('scripts')
-    <script src="{{ asset('frontend/js/isotopev3.0.6.pkgd.min.js') }}"></script>
     <script>
-        $(document).ready(function($) {
-            "use strict";
-            //To Initialize the ISO Tope
-            $('.project-list').isotope();
-
-            $('.project-titles li').on('click', function() {
-                $('.project-titles li').removeClass('active');
-                $(this).addClass('active');
-
-                var selector = $(this).attr('data-filter');
-                $('.project-list').isotope({
-                    filter: selector
-                });
-            });
-        }(jQuery));
+        var filterizd = $('.filtr-container').filterizr({
+            //options object
+        });
     </script>
 @endpush
