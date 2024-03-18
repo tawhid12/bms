@@ -170,7 +170,7 @@
                                 <a class="dropdown-item" href="{{ route('allbrochure') }}">All</a>
                                 @foreach (\App\Models\Ebrochure::orderBy('serial')->get() as $ebrochure)
                                     <a class="dropdown-item"
-                                        href="{{ asset($ebrochure->upload_pdf) }}">{{ $ebrochure->title }}</a>
+                                        href="{{ asset($ebrochure->upload_pdf) }}" target="_blank">{{ $ebrochure->title }}</a>
                                 @endforeach
                             </div>
                         </li>
