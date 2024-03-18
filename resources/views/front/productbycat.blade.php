@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <ul class="list-inline simplefilter">
                         <!-- For filtering controls add -->
-                        <li><a class="dropdown-item" href="{{ route('allproducts') }}">All items</a></li>
+                        <li ><a href="{{ route('allproducts') }}">All items</a></li>
                         @forelse ($categories as $c)
                             <li data-filter="{{ $c->id }}">{{ $c->cat_name }}</li>
                         @empty
