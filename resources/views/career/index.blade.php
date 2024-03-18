@@ -23,7 +23,8 @@
                                 <tr>
                                     <th scope="col">{{ __('#SL') }}</th>
                                     <th scope="col">{{ __('Title') }}</th>
-                                    <th scope="col">{{ __('Details') }}</th>
+                                    {{-- <th scope="col">{{ __('Details') }}</th> --}}
+                                    <th scope="col">{{ __('Unpublished Date') }}</th>
                                     <th scope="col">{{ __('Attchments') }}</th>
                                     <th class="white-space-nowrap">{{ __('Action') }}</th>
                                 </tr>
@@ -33,7 +34,8 @@
                                     <tr>
                                         <th scope="row">{{ ++$loop->index }}</th>
                                         <th scope="row">{{ $c->car_title }}</th>
-                                        <th scope="row">{!! $c->car_des !!}</th>
+                                        {{-- <th scope="row">{!! $c->car_des !!}</th> --}}
+                                        <th>{{ $c->unpublished_date }}</th>
                                         <td><a width="100px" href="{{ asset('uploads/career/' . $c->upload_file) }}">File</a>
                                         </td>
                                         <td class="white-space-nowrap">
