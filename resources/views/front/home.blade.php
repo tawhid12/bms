@@ -335,7 +335,7 @@
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>{{$product->title}}</h2>
+                        <h2><a href="{{route('singleproduct',$product->slug)}}">{{$product->title}}</a></h2>
                         <p>{{$product->product_des}}</p>
                         <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>
@@ -365,7 +365,7 @@
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>{{$product->title}}</h2>
+                        <h2><a href="{{route('singleproduct',$product->slug)}}">{{$product->title}}</a></h2>
                         <p>{{$product->product_des}}</p>
                         <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>
@@ -393,7 +393,7 @@
                 </div>
                 <div class="col-sm-6 wow slideInRight" style="visibility: hidden; animation-name: none;">
                     <div class="about-content-dl">
-                        <h2>{{$product->title}}</h2>
+                        <h2><a href="{{route('singleproduct',$product->slug)}}">{{$product->title}}</a></h2>
                         <p>{{$product->product_des}}</p>
                         <div><a href="{{route('singleproduct',$product->slug)}}" class="pro-btn">View details</a></div>
                     </div>

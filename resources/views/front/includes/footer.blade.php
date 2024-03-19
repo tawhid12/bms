@@ -8,8 +8,8 @@
             style="visibility: hidden; animation-name: none;">
             <h2>Our Concerns</h2>
             <ul>
-                <li><a href=""><i class="fa fa-angle-right"></i>Bms Company Limited</a></li>
-                <li><a href=""><i class="fa fa-angle-right"></i>Bms Rope Company Limited</a></li>
+                <li><a href="{{route('bmscompany')}}"><i class="fa fa-angle-right"></i>BMS Company Limited</a></li>
+                <li><a href="{{route('bmsrope')}}"><i class="fa fa-angle-right"></i>BMS Rope Company Limited</a></li>
             </ul>
         </div>
         <div class="  col-sm-3 footer-left wow slideInRight" style="visibility: hidden; animation-name: none;">
