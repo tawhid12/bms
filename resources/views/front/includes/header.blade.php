@@ -81,7 +81,7 @@
         @endif
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="navbar-brand" href="{{route('front')}}">
+                <div class="navbar-brand">
                     <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
