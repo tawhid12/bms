@@ -193,7 +193,7 @@
                 </div>
                 <div class="col-12 col-md-6 about-part">
                     <div class="row">
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/1.png') }}">30 years of experience
                                     in
@@ -202,21 +202,21 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/2.png') }}">100% product supply in
                                     Asia, Europe, and America
                                 </p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/3.png') }}">Two factories with
                                     top-tier production
                                     capabilities.</p>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/4.png') }}">Producing 19 tons of
                                     ropes, twine and hessian
@@ -226,7 +226,7 @@
                         </div>
                     </div>
                 </div>
-                <div class=" col-md-6 about-part">
+                <div class=" col-md-6 about-part wow zoomIn" style="visibility: hidden; animation-name: none;">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="feature-icon">
@@ -236,7 +236,7 @@
                                     efficient machinery.</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/6.png') }}">ISO 9001:2015
                                     certification attests to our
@@ -244,14 +244,14 @@
                                     management standards.</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/7.png') }}">Sustainable and
                                     environmentally conscious
                                     natural products</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                             <div class="feature-icon">
                                 <p class="bol"><img src="{{ asset('frontend/images/icn/8.png') }}">Strategic partner
                                     actively
