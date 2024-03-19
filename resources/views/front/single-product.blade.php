@@ -120,7 +120,7 @@
                                         </div>
                                     </div>
                                     @endif
-                                    <h3>Sisal Rope Breaking Strength chart</h3>
+                                    <h3>Breaking Strength Chart</h3>
                                     {!! html_entity_decode($product->srbsc) !!}
                                 </div>
                             </div>
