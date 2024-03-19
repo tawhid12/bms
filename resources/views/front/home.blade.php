@@ -301,8 +301,8 @@
                         <img src="https://placehold.co/306x410" alt=""
                             class="img-thumbnail h-100">
                         @endif
-                        </a>
                     <h4>{{$cat->cat_name}}</h4>
+                    </a>
                 </div>
                 @empty
                 @endforelse
