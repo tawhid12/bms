@@ -34,7 +34,7 @@
                     <div class="col-12 col-md-3">
                         <a href="{{ asset($e->upload_pdf) ?? '' }}">
                         <img src="{{ asset($e->image) }}" class="img-fluid">
-                        <h3>{{ $e->title }}></h3>
+                        <h3>{{ $e->title }}</h3>
                                 </a>
                     </div>
                 @empty
