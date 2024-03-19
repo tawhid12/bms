@@ -31,11 +31,12 @@
                     <h2>Ebrochure</h2>
                 </div>
                 @forelse($ebrochures as $e)
-                    <div class="col-12 col-md-3">
-                        <img src="{{ asset($e->image) }}" class="img-fluid">
-                        <h3><a href="{{ asset($e->upload_pdf) ?? '' }}">{{ $e->title }}<i
-                                    class="fa fa-share-square-o"></i></a></h3>
-                    </div>
+                    <a href="{{ asset($e->upload_pdf) ?? '' }}">
+                        <div class="col-12 col-md-3">
+                            <img src="{{ asset($e->image) }}" class="img-fluid">
+                            <h3>{{ $e->title }}</h3>
+                        </div>
+                    </a>
                 @empty
                     <div class="col-md-12 my-3">
                         <h4>No Brochure Found</h4>
