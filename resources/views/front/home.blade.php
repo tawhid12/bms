@@ -293,7 +293,7 @@
             <div class="row">
                 @forelse ($all_categories as $cat)
                 <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
-                    <a href="">
+                    <a href="{{ route('productbycat',$cat->id) }}">
                         @if ($cat->upload_file)
                         <img src="{{asset($cat->upload_file)}}" alt=""
                             class="img-thumbnail h-100">
