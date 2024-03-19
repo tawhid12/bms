@@ -81,9 +81,9 @@
         @endif
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                {{-- <a class="navbar-brand" href="{{route('front')}}"> --}}
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo navbar-brand">
-                {{-- </a> --}}
+                <a class="navbar-brand" href="{{route('front')}}">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
