@@ -5,7 +5,7 @@ $('.hero-slider').slick({
     arrows: false,
     prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-arrow-left\'></i></button>',
     nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-arrow-right\'></i></button>',
-    dots: false,
+    dots: true,
     autoplaySpeed: 7000,
     pauseOnFocus: false,
     pauseOnHover: false,
