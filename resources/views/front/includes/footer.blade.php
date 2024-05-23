@@ -41,7 +41,8 @@
             <h2>BMS Rope Company. Ltd.</h2>
             <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>88-02333342065 | <i class="fa fa-fax"></i>88-02333342064</p>
+            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
+            <p><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
         </div>
 
         <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
@@ -52,7 +53,7 @@
                 SITAKUNDA, CHATTOGRAM, BANGLADESH.
             </p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>88-02333341010</p>
+            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333341010</p>
             <p><i class="fa fa-fax"></i>FAX: 88-02333340067</p>
         </div>
         <div class="col-sm-1"></div>
