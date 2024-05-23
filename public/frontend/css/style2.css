@@ -503,11 +503,12 @@ a{
 }
 .about-image-dl {
   width: auto;
-  height: 280px;
+  /* height: 280px; */
   float: left;
   overflow: hidden;
-  padding: 3% 10%;
-  margin-bottom: 25px;
+  /* padding: 3% 10%;
+  margin-bottom: 25px; */
+  margin: 10px;
   text-align: center;
 }
 .about-content-dl {
