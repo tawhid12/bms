@@ -514,7 +514,7 @@ a{
 }
 .about-content-dl {
   text-align: left;
-  padding: 3% 0;
+  /* padding: 3% 0; */
   margin-bottom: 25px;
 }
 .featured-product h2 {
