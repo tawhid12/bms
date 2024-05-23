@@ -22,8 +22,8 @@
                 TOCHIGI PREFECTURE, JAPAN.
             </p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>TEL: 0282-24-8803</p>
-            <p><i class="fa fa-fax"></i>FAX: 0282-22-6833</p>
+            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 0282-24-8803</p>
+            <p class="m-0"><i class="fa fa-fax"></i>FAX: 0282-22-6833</p>
         </div>
         <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
             <h2>BMS ROPE COMPANY LIMITED</h2>
@@ -33,16 +33,16 @@
                 CHATTOGRAM, BANGLADESH.
             </p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i>info@bms-rope.com</a><br><br> -->
-            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
-            <p><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
+            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
+            <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
         </div>
         <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
 
             <h2>BMS Rope Company. Ltd.</h2>
             <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
-            <p><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
+            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
+            <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
         </div>
 
         <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
@@ -53,8 +53,8 @@
                 SITAKUNDA, CHATTOGRAM, BANGLADESH.
             </p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333341010</p>
-            <p><i class="fa fa-fax"></i>FAX: 88-02333340067</p>
+            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333341010</p>
+            <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333340067</p>
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -64,7 +64,7 @@
 <div class="container">
     <div class="row text-center">
         <div class="col-sm-12">
-            <p>Copyright © 2023 || BMS Rope</p>
+            <p>Copyright © 2023 || BMS Rope → Copyright © 2023 || Marusan Group</p>
         </div>
     </div>
 </div>
