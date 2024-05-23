@@ -283,7 +283,8 @@ a{
   }
   .hero-slider .prevArrow:hover,
   .hero-slider .nextArrow:hover {
-    background: rgba(232, 68, 68, 0.5);
+    /* background: rgba(232, 68, 68, 0.5); */
+    background:rgba(13, 31, 65, 1);
   }
   .hero-slider .prevArrow {
     left: 20px;
