@@ -3,12 +3,12 @@ $('.hero-slider').slick({
     autoplay: true,
     infinite: true,
     arrows: true,
-    prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-arrow-left\'></i></button>',
-    nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-arrow-right\'></i></button>',
+    prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'fa fa-angle-left\'></i></button>',
+    nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'fa fa-angle-right\'></i></button>',
     dots: true,
     autoplaySpeed: 7000,
-    pauseOnFocus: true,
-    pauseOnHover: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
     customPaging: function (slider, i) {
       var icon = $(slider.$slides[i]).data('icon');
       var text = $(slider.$slides[i]).data('text');
