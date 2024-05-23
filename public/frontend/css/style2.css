@@ -218,6 +218,7 @@ a{
     color:#0D1F41;
     /*text-decoration: underline;*/
     background: transparent;
+    font-weight: 900;
   }
   .navigation .navbar .dropdown-item::before {
     position: absolute;
