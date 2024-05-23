@@ -1,38 +1,54 @@
 
     <footer id="top-footer"> <a class="bc2top" style="display: none;"><i class="fa fa-arrow-up"
         aria-hidden="true"></i></a>
-<div class="container">
+<div class="container-fluid">
 
     <div class="row">
-        <div class="col-sm-3 footer-left wow slideInUp" id="company-list"
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2 footer-left wow slideInUp" id="company-list"
             style="visibility: hidden; animation-name: none;">
             <h2>Our Concerns</h2>
             <ul>
                 <li><a href="{{route('bmsrope')}}"><i class="fa fa-angle-right"></i>BMS Company Limited</a></li>
                 <li><a href="{{route('bmscompany')}}"><i class="fa fa-angle-right"></i>BMS Rope Company Limited</a></li>
+                <li><a href=""><i class="fa fa-angle-right"></i>BKY Jute Mills Limited</a></li>
             </ul>
         </div>
-        <div class="  col-sm-3 footer-left wow slideInRight" style="visibility: hidden; animation-name: none;">
-            <h2>Head Office</h2><br>
-            <p>Marusan Sangyo Co. Ltd.</p>
-            <p><i class="fa fa-home"></i>912-nonaka cho, tochigi city, Tochigi prefecture, japan.</p>
+        <div class="col-sm-2 footer-left wow slideInRight" style="visibility: hidden; animation-name: none;">
+            <h2>MOTHER COMPANY</h2><br>
+            <p>MARUSAN SANGYO CO., LTD.</p>
+            <p class="m-0"><i class="fa fa-home"></i>
+                912-NONAKA CHO, TOCHIGI CITY,
+                TOCHIGI PREFECTURE, JAPAN.
+            </p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
-            <p><i class="fa fa-mobile-phone"></i>0282-24-8803 | <i class="fa fa-fax"></i>0282-24-8803</p>
+            <p><i class="fa fa-mobile-phone"></i>TEL: 0282-24-8803 | <i class="fa fa-fax"></i>FAX: 0282-22-6833</p>
         </div>
-        <div class=" col-sm-3  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
+        <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
             <h2>BMS Company Limited</h2>
-            <p></p>
-            <p><i class="fa fa-home"></i>Plot No. 1~ 6. Sector -4, C.E.P.Z. Chittagong, Bangladesh.</p>
+            <p>BMS COMPANY LIMITED</p>
+            <p><i class="fa fa-home"></i>PLOT # 1-6, SECTOR # 4, CEPZ,
+                CHATTOGRAM, BANGLADESH.</p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i>info@bms-rope.com</a><br><br> -->
-            <p><i class="fa fa-mobile-phone"></i>88-02333341010 | <i class="fa fa-fax"></i>88-02333340067 </p>
+            <p><i class="fa fa-mobile-phone"></i>TEL: 88-02333341010 | <i class="fa fa-fax"></i>FAX: 88-02333340067</p>
         </div>
-        <div class=" col-sm-3  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
+        
+        <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
 
             <h2>BMS Rope Company. Ltd.</h2>
             <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
             <p><i class="fa fa-mobile-phone"></i>88-02333342065 | <i class="fa fa-fax"></i>88-02333342064</p>
         </div>
+
+        <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
+
+            <h2>BMS Rope Company. Ltd.</h2>
+            <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
+            <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
+            <p><i class="fa fa-mobile-phone"></i>88-02333342065 | <i class="fa fa-fax"></i>88-02333342064</p>
+        </div>
+        <div class="col-sm-1"></div>
 
 
 

@@ -173,7 +173,7 @@
                             and
                             hessian cloth for a wide range of industries and applications.
                         </p>
-                        <a href="" class="mt-5 btn btn-primary px-5 rounded" style="background-color: #0d1f41">Read
+                        <a href="{{ route('companydes') }}" class="mt-5 btn btn-primary px-5 rounded" style="background-color: #0d1f41">Read
                             More</a>
                     </div>
                 </div>
@@ -301,7 +301,7 @@
                         <img src="https://placehold.co/306x410" alt=""
                             class="img-thumbnail h-100">
                         @endif
-                    <h4>{{$cat->cat_name}}</h4>
+                    <h4 class="text-center">{{$cat->cat_name}}</h4>
                     </a>
                 </div>
                 @empty
