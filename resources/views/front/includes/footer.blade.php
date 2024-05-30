@@ -67,7 +67,7 @@
 <div class="container">
     <div class="row text-center">
         <div class="col-sm-12">
-            <p>Copyright © 2023 || Marusan Group</p>
+            <p>`Copyright © 2023 || Marusan Group</p>
         </div>
     </div>
 </div>
