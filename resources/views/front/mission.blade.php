@@ -29,7 +29,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="all_part mt-5 py-5">
+    {{-- <section class="all_part mt-5 py-5">
         <div class="container">
             <div class="row">
 
@@ -81,7 +81,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 @endsection

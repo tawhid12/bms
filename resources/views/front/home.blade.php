@@ -291,6 +291,7 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-2"></div>
                 @forelse ($all_categories as $cat)
                 <div class="col-md-3 wow zoomIn" style="visibility: hidden; animation-name: none;">
                     <a href="{{ route('productbycat',$cat->id) }}">
@@ -306,6 +307,7 @@
                 </div>
                 @empty
                 @endforelse
+                <div class="col-md-2"></div>
             </div>
             <div class="row d-flex justify-content-center">
                 <a href="{{route('allproducts')}}" class="pro-btn d-flex justify-content-center">View all products</a>

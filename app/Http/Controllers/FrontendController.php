@@ -85,10 +85,10 @@ class FrontendController extends Controller
     public function presidentsp(){
         return view('front.president-speech');
     }
-    public function mission(){
+    public function management(){
         return view('front.mission');
     }
-    public function vission(){
+    public function mision_vision(){
         return view('front.vission');
     }
     public function allproducts(){

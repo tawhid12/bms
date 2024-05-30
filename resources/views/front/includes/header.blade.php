@@ -43,7 +43,11 @@
         });
     </script>
     <link rel="shortcut icon" type="image/png" href="">
-    
+    <style>
+        .dropdown-menu{
+            background-color: #0068B6;
+        }
+    </style>
     @stack('styles')
 </head>
 
@@ -63,11 +67,11 @@
                             </li>
                             <li class="list-inline-item">
                                 <a href="callto:1234565523">Call Us Now:
-                                    <span class="ml-2">+88-02333342065</span>
+                                    <span class="ml-2">+88-02333341010</span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="mailto:info@companyname.com">info@bms-japanbdrope.com</a>
+                                <a href="mailto:info@companyname.com">bms@bms-japanbdrope.com</a>
                             </li>
                         </ul>
                     </div>
@@ -106,8 +110,8 @@
                                 <a class="dropdown-item" href="{{ route('aboutus') }}">About Us</a>
                                 <a class="dropdown-item" href="{{ route('companydes') }}">Company Description</a>
                                 <a class="dropdown-item" href="{{ route('presidentsp') }}">President Speech</a>
-                                <a class="dropdown-item" href="{{ route('mission') }}">Mission</a>
-                                <a class="dropdown-item" href="{{ route('vission') }}">Vission</a>
+                                <a class="dropdown-item" href="{{ route('management') }}">Our Management</a>
+                                <a class="dropdown-item" href="{{ route('mision-vision') }}">Our Mision and Vision</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -150,6 +154,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{route('bmscompany')}}">BMS Company Limited</a>
                                 <a class="dropdown-item" href="{{route('bmsrope')}}">BMS Rope Company Limited</a>
+                                <a class="dropdown-item" href="{{route('bkyjute')}}">BKY Jute Mills Limited</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

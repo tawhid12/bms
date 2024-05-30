@@ -206,7 +206,7 @@ a{
   }
   .navigation .navbar .dropdown-item {
     position: relative;
-    color: #0D1F41;
+    color: #fff;
     transition: 0.2s ease;
   }
   .navigation .navbar .dropdown-item:not(:last-child) {

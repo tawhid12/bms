@@ -7,7 +7,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-2 footer-left wow slideInUp" id="company-list"
             style="visibility: hidden; animation-name: none;">
-            <h2>Our Concerns</h2>
+            <h2>OUR CONCERNS</h2>
             <ul>
                 <li><a href="{{route('bmsrope')}}"><i class="fa fa-angle-right"></i>BMS Company Limited</a></li>
                 <li><a href="{{route('bmscompany')}}"><i class="fa fa-angle-right"></i>BMS Rope Company Limited</a></li>
@@ -26,20 +26,23 @@
             <p class="m-0"><i class="fa fa-fax"></i>FAX: 0282-22-6833</p>
         </div>
         <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
+            <h2>BMS COMPANY LIMITED</h2>
+            <p>BMS COMPANY LIMITED</p>
+            <p><i class="fa fa-home"></i>
+                PLOT # 1-6, SECTOR # 4, CEPZ,
+                CHATTOGRAM, BANGLADESH.
+            </p>
+            <!-- <a href=""><i class="fa fa-envelope-o"></i>info@bms-rope.com</a><br><br> -->
+            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333341010</p>
+            <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333340067</p>
+        </div>
+        <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
             <h2>BMS ROPE COMPANY LIMITED</h2>
             <p>BMS ROPE COMPANY LIMITED</p>
             <p><i class="fa fa-home"></i>
                 PLOT # 54-55, SECTOR # 7, CEPZ,
                 CHATTOGRAM, BANGLADESH.
             </p>
-            <!-- <a href=""><i class="fa fa-envelope-o"></i>info@bms-rope.com</a><br><br> -->
-            <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
-            <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
-        </div>
-        <div class="col-sm-2  footer-left wow slideInLeft" style="visibility: hidden; animation-name: none;">
-            <h2>BMS Rope Company. Ltd.</h2>
-            <p>BMS Rope Company. Ltd.</p>
-            <p><i class="fa fa-home"></i>Plot No. 54~ 55. Sector -7, C.E.P.Z. Chittagong, Bangladesh.</p>
             <!-- <a href=""><i class="fa fa-envelope-o"></i></a> -->
             <p class="m-0"><i class="fa fa-mobile-phone"></i>TEL: 88-02333342065</p>
             <p class="m-0"><i class="fa fa-fax"></i>FAX: 88-02333342064</p>
