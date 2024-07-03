@@ -10,7 +10,7 @@
 @section('content')
     <section>
         <div class="hero-slider position-relative">
-            @forelse ($slider as $s)
+            {{-- @forelse ($slider as $s)
                 <div class="hero-slider-item py-160"
                     style="background-image: url({{ asset($s->image) }});" data-icon="ti-package"
                     data-text="Human Resources">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-            @empty
+            @empty --}}
                 <div class="hero-slider-item py-160"
                     style="background-image: url({{ asset('frontend/images/slide/1.png') }});" data-icon="ti-comments"
                     data-text="Consultation">
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-            @endforelse
+            {{-- @endforelse --}}
         </div>
     </section>
 
