@@ -134,4 +134,7 @@ class FrontendController extends Controller
     public function bmsrope(){
         return view('front.bms-rope-contact');
     }
+    public function bkyjute(){
+        return view('front.bms-jute-contact');
+    }
 }
