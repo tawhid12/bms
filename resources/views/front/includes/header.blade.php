@@ -111,7 +111,7 @@
                                 <a class="dropdown-item" href="{{ route('companydes') }}">Company Description</a>
                                 <a class="dropdown-item" href="{{ route('presidentsp') }}">President Speech</a>
                                 <a class="dropdown-item" href="{{ route('management') }}">Our Management</a>
-                                <a class="dropdown-item" href="{{ route('mision-vision') }}">Our Mision and Vision</a>
+                                <a class="dropdown-item" href="{{ route('mision-vision') }}">Our Vision and Mision</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

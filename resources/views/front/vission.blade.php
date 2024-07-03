@@ -33,8 +33,11 @@
             <div class="row">
 
                 <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
-                    <h2>Our Mission</h2>
-                    <ul class="mission">
+                    <h2>Vision</h2>
+                    <p>
+                        To serve our customers with world-class ropes and twines that are cost-effective, environmentally friendly and relevant to the times by compiling the skills, knowledge and experience of our workforce. Ensure fair return to each and every stakeholders of their contribution. To give the shareholders the optimum return on their investment. Committed to making up an encyclopedic nobility in the rope and twine industry and keeping the footprint for the future generation of the same industry. 
+                    </p>
+                    {{-- <ul class="mission">
                         <li>
                             Deliver High-Quality Products: Our mission is to consistently deliver high-quality ropes,
                             twines, and hessian cloth products that meet or exceed industry standards and
@@ -70,7 +73,7 @@
                             Ethical Conduct: Uphold the highest ethical standards in all our business activities,
                             fostering trust and integrity among all stakeholders.
                         </li>
-                    </ul>
+                    </ul> --}}
 
                 </div>
 
@@ -85,8 +88,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
-                    <h2>Our Vission</h2>
-                    <ul class="vission">
+                    <h2>Mission</h2>
+                    {{-- <ul class="vission">
                         <li>
                             <strong>Market Expansion : </strong> Expand our presence in both domestic and international
                             markets,
@@ -131,7 +134,10 @@
                             for customer
                             delight by consistently exceeding expectations in product quality and service.
                         </li>
-                    </ul>
+                    </ul> --}}
+                    <p>
+                        We are committed to upholding ourselves as the world’s best manufacturer of quality ropes & twines with the finest quality, disciplined, and highly trained professional workforce. We are committed to securing the lives of our sailors & fishermen, make easier the lives of the farmers, gardeners and other all of our end users easier by providing the finest quality ropes to them. We shall venture and collaborate with allied business entities. 
+                    </p>
                 </div>
             </div>
         </div>
