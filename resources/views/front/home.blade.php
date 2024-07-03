@@ -10,139 +10,163 @@
 @section('content')
     <section>
         <div class="hero-slider position-relative">
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/1.png') }});" data-icon="ti-comments"
-                data-text="Consultation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+            @forelse ($slider as $s)
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset($s->image) }});" data-icon="ti-package"
+                    data-text="Human Resources">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/2.png') }});" data-icon="ti-bar-chart"
-                data-text="Marketting">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+            @empty
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/1.png') }});" data-icon="ti-comments"
+                    data-text="Consultation">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/3.png') }});" data-icon="ti-money"
-                data-text="Finance">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/2.png') }});" data-icon="ti-bar-chart"
+                    data-text="Marketting">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/4.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/3.png') }});" data-icon="ti-money"
+                    data-text="Finance">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/5.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/4.png') }});" data-icon="ti-package"
+                    data-text="Human Resources">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('frontend/images/slide/6.png') }});" data-icon="ti-package"
-                data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".1"></h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5"
-                                    data-animation-in="fadeInLeft" data-delay-in=".5">
-                                </h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
-                                    data-delay-in=".9">
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
-                                    href="about.html" class="btn btn-outline text-uppercase"></a>
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/5.png') }});" data-icon="ti-package"
+                    data-text="Human Resources">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {{$slider}}
+                <div class="hero-slider-item py-160"
+                    style="background-image: url({{ asset('frontend/images/slide/6.png') }});" data-icon="ti-package"
+                    data-text="Human Resources">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".1"></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5"
+                                        data-animation-in="fadeInLeft" data-delay-in=".5">
+                                    </h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                        data-delay-in=".9">
+                                    </p>
+                                    <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                        href="about.html" class="btn btn-outline text-uppercase"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforelse
         </div>
     </section>
 
