@@ -142,6 +142,7 @@
                     </div>
                 </div>
             </div>
+            {{$slider}}
         </div>
     </section>
 
