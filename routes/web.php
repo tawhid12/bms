@@ -63,10 +63,7 @@ use App\Http\Middleware\unknownUser;
 /*Test controler */
 Route::get('/mail', [test::class,'index'])->name('mail');
 /* === Page ==== */
-Route::get('/', function () {
-    return redirect()->route('signInForm');
-});
-
+Route::get('/',[front::class,'index'])->name('front');
 Route::get('/career', [front::class,'career'])->name('career');
 Route::get('/contact-us', [front::class,'contact'])->name('contact');
 Route::resource('contact', contact::class)->only(['store']);
@@ -103,6 +100,7 @@ Route::get('/video/{slug}', [media::class,'video'])->name('video');
 Route::group(['middleware' => 'isSuperadmin'], function () {
 
     Route::prefix('superadmin')->group(function () {
+
         Route::get('/dashboard', [dash::class,'superadminDashboard'])->name('superadmin.Dashboard');
 
         Route::get('/profile', [userprofile::class,'profile'])->name('superadmin.profile');
@@ -110,8 +108,8 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::get('/change_password', [userprofile::class,'change_password'])->name('superadmin.change_password');
         Route::post('/change_password', [userprofile::class,'change_password_store'])->name('superadmin.change_password.store');
 
-
-
+       
+   
         Route::resource('adminuser', adminuser::class, ["as" => "superadmin"]);
         Route::resource('role', role::class,["as" => "superadmin"]);
 
@@ -120,13 +118,13 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('year',year::class,['as'=>'superadmin']);
         Route::resource('pGalleryCat',pGalleryCat::class,['as'=>'superadmin']);
         Route::resource('pGallery',pGallery::class,['as'=>'superadmin']);
-        Route::get('pGallerydelete', [pGallery::class, 'delete'])->name('superadmin.image.delete');
+        Route::get('pGallerydelete', [pGallery::class, 'delete'])->name('superadmin.image.delete'); 
 
         /*==Product Photo Upload */
         Route::get('product/gallery/',[pGallery::class,'productGallery'])->name('superadmin.productGallery');
         Route::get('product/photo/{id}',[pGallery::class,'product_photo_show'])->name('superadmin.product_photo_show');
         Route::post('product/photo/upload',[pGallery::class,'product_photo_upload'])->name('superadmin.product_photo_upload');
-        Route::get('delete/product/single/photo', [pGallery::class, 'product_photo_delete'])->name('superadmin.product_photo_delete');
+        Route::get('delete/product/single/photo', [pGallery::class, 'product_photo_delete'])->name('superadmin.product_photo_delete'); 
 
         Route::resource('vgallery',vGallery::class,['as'=>'superadmin']);
         Route::resource('vgalleryCat',vGalleryCat::class,['as'=>'superadmin']);
@@ -138,8 +136,8 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('superadmin.front_menu.mss');
         Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('superadmin.front_menu.detroy');
 
-
-
+       
+        
         Route::resource('car', career::class,['as'=>'superadmin']);
         Route::resource('contact', contact::class,['as'=>'superadmin']);
         Route::resource('setting', setting::class,['as'=>'superadmin']);
@@ -148,10 +146,6 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('subcategory', subcat::class,['as'=>'superadmin']);
         Route::resource('ebrochure', ebrochure::class,['as'=>'superadmin']);
         Route::resource('product', product::class,['as'=>'superadmin']);
-
-        Route::get('/chat', function () {
-            return view('vue.chat');
-        })->name('superadmin.Chat');
     });
 
 });
@@ -171,5 +165,5 @@ Route::get('/all-ebrochure', [front::class,'allbrochure'])->name('allbrochure');
 Route::get('/{slug}', [front::class,'singleproduct'])->name('singleproduct');
 
 
-
+       
 

@@ -55,10 +55,10 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://bky-jutemills.dev'),
+    'url' => env('APP_URL', 'http://localhost'),
 
-    // 'asset_url' => env('ASSET_URL','https://bms-japanbdrope.com/public'),
-    'asset_url' => env('ASSET_URL', 'https://bky-jutemills.dev/public'),
+    'asset_url' => env('ASSET_URL','https://bms-japanbdrope.com/public'),
+    //'asset_url' => env('ASSET_URL','http://localhost/bms/public'),
 
     /*
     |--------------------------------------------------------------------------

@@ -4,9 +4,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BKY JUTE-MILES </title>
+    <title>Marusan Group</title>
+
     <!-- Facebook -->
     <meta name="description" content="">
     <meta property="og:title" content="">
@@ -14,12 +18,20 @@
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
     <meta property="og:image" content="">
+
+
+
+
+
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}"> --}}
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/settings.css') }}" media="screen"> --}}
+
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/slick/slick-theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/animate.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}"> --}}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('frontend/css/style2.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -112,9 +124,9 @@
                                 @forelse ( \App\Models\Category::all() as $c )
                                 <a class="dropdown-item category" href="{{ route('productbycat',$c->id) }}" style="text-transform: uppercase">{{$c->cat_name}}</a>
                                 @empty
-
+                                    
                                 @endforelse
-
+                               
                             </div>
                         </li>
                         <li class="nav-item dropdown">
