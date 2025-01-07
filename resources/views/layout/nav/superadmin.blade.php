@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="{{route(currentUser().'.Dashboard')}}"><img src="{{ asset('assets/images/logo/bg-logo.png')}}" alt="Logo" srcset=""></a>
+                    <a href="{{route(currentUser().'.Dashboard')}}"><img src="{{ asset('assets/images/logo/logo.png')}}" alt="Logo" srcset="" width="100%"></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -38,6 +38,9 @@
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
+                </li>
+                <li class="sidebar-item"><a href="{{route(currentUser().'.Chat')}}" class="sidebar-link"> <i class="bi bi-grid-fill"></i>
+                        <span>Chat</span></a>
                 </li>
                 <li class="sidebar-item"><a href="{{route(currentUser().'.setting.index')}}" class="sidebar-link"> <i class="bi bi-grid-fill"></i>
                         <span>Company Profile Settings</span></a>
